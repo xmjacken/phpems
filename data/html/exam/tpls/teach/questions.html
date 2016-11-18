@@ -1,441 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>DAC模拟考试系统后台管理</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
-	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
-	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
-	<!--[if lt IE 9]>
-	<script src="app/core/styles/js/html5shiv.min.js"></script>
-	<script src="app/core/styles/js/respond.min.js"></script>
-	<![endif]-->
-	<script src="app/core/styles/js/jquery.min.js"></script>
-	<script src="app/core/styles/js/jquery-ui.min.js"></script>
-	<script src="app/core/styles/js/bootstrap.min.js"></script>
-	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
-
-	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
-
-	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
-	<script src="app/core/styles/js/plugin.js"></script>
-</head><body>
-<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">	<div class="row-fluid">		<div class="main">			<div class="col-xs-3">				<!--<h1 style="font-size:42px;color:#337AB7;">--><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;<b>DAC在线考试管理平台</b><!--</h1>-->		</div>			<div class="col-xs-1">			</div>			<div class="col-xs-6" style="padding-top:22px;">				<div class="form-inline">					<div class="form-group">						<input type="text" style="width:380px;" class="form-control" id="keyword" placeholder="搜索课程/资料">					</div>					<button type="button" class="btn btn-info" onclick="javascript:window.location='index.php?content-app-search&keyword='+$('#keyword').val();">搜资料</button>					<button type="button" class="btn btn-primary" onclick="javascript:window.location='index.php?course-app-search&keyword='+$('#keyword').val();">搜课程</button>				</div>			</div>			<div class="col-xs-2" style="padding-top:22px;">				<ul class="list-unstyled list-inline">										<li>						<div class="btn-group">							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> peadmin</button>							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">								<span class="caret"></span>								<span class="sr-only">Toggle Dropdown</span>							</button>							<ul class="dropdown-menu">								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>								<li><a href="index.php?exam-teach"><em class="glyphicon glyphicon-book"></em> 教师管理</a></li>								<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>							</ul>						</div>					</li>									</ul>			</div>		</div>	</div></div><div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-12">				<ul class="list-unstyled list-inline">					<li class="menu col-xs-1"><a href="index.php" class="icon">首页</a></li>					<li class="menu col-xs-1"><a href="index.php?course">课程</a></li>					<li class="menu col-xs-1 active"><a href="index.php?exam">考试</a></li>				</ul>			</div>		</div>	</div></div><div class="container-fluid">
-	<div class="row-fluid">
-		<div class="main">
-			<div class="col-xs-2" style="padding-top:10px;margin-bottom:0px;">
-				<style>.panel-heading a{color:#FFFFFF;text-decoration:none;}</style><div class="panel-group" id="panel-13465">	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-707348">				<em class="glyphicon glyphglyphicon glyphicon-th-large"></em> 考试设计			</a>		</div>		<div id="panel-element-707348" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="?exam-teach-basic">考场列表</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-2120901">				<em class="glyphicon glyphglyphicon glyphicon-wrench"></em> 课程成绩			</a>		</div>		<div id="panel-element-2120901" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-users">成绩管理</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-212076">				<em class="glyphicon glyphglyphicon glyphicon-text-color"></em> 试题管理			</a>		</div>		<div id="panel-element-212076" class="panel-collapse in collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-questions">普通试题管理</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-rowsquestions">题帽题管理</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-212096">				<em class="glyphicon glyphglyphicon glyphicon-duplicate"></em> 试卷管理			</a>		</div>		<div id="panel-element-212096" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-exams">试卷列表</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-exams-autopage">随机组卷</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-exams-selfpage">手工组卷</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-exams-temppage">即时组卷</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-212090">				<em class="glyphicon glyphglyphicon glyphicon-trash"></em> 回收站			</a>		</div>		<div id="panel-element-212090" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-recyle">普通试题</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-recyle-rows">题帽题</a></li>			</ul>		</div>	</div></div>			</div>
-			<div class="col-xs-10" id="datacontent">
-				<div class="box itembox" style="margin-bottom:0px;border-bottom:1px solid #CCCCCC;">
-					<div class="col-xs-12">
-						<ol class="breadcrumb">
-							<li><a href="index.php?exam-teach">考试模块</a></li>
-							<li><a href="index.php?exam-teach-questions">试题管理</a></li>
-							<li class="active">普通试题管理</li>
-						</ol>
-					</div>
-				</div>
-				<div class="box itembox" style="padding-top:10px;margin-bottom:0px;">
-					<h4 class="title" style="padding:10px;">
-						普通试题管理
-						<span class="pull-right">
-							<a data-toggle="dropdown" class="btn btn-primary" href="#">添加试题 <strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li><a href="index.php?exam-teach-questions-addquestion&page=">单题添加</a></li>
-								<li><a href="index.php?exam-teach-questions-bataddquestion&page=">批量添加</a></li>
-								<li><a href="index.php?exam-teach-questions-filebataddquestion&page=">CSV导入</a></li>
-							</ul>
-						</span>
-					</h4>
-					<form action="index.php?exam-teach-questions" method="post" class="form-inline">
-						<table class="table">
-							<thead>
-				                <tr>
-							        <th colspan="2">搜索</th>
-							        <th></th>
-							        <th></th>
-							        <th></th>
-							        <th></th>
-				                </tr>
-				            </thead>
-							<tr>
-								<td>
-									试题ID：
-								</td>
-								<td>
-									<input name="search[questionid]" class="form-control" size="10" type="text" class="number" value=""/>
-								</td>
-								<td>
-									录入时间：
-								</td>
-								<td>
-									<input class="form-control datetimepicker" data-date="2016-11-10" data-date-format="yyyy-mm-dd" type="text" name="search[stime]" size="10" id="stime" value=""/> - <input class="form-control datetimepicker" data-date="2016-11-10" data-date-format="yyyy-mm-dd" size="10" type="text" name="search[etime]" id="etime" value=""/>
-								</td>
-								<td>
-									关键字：
-								</td>
-								<td>
-									<input class="form-control" name="search[keyword]" size="10" type="text" value=""/>
-								</td>
-							</tr>
-					        <tr>
-								<td>
-									科目：
-								</td>
-								<td>
-					        		<select name="search[questionsubjectid]" class="combox form-control" target="sectionselect" refUrl="?exam-teach-questions-ajax-getsectionsbysubjectid&subjectid={value}">
-						        		<option value="0">选择科目</option>
-								  										  		<option value="1">危化品科目</option>
-								  									  		</select>
-					        	</td>
-					        	<td>
-									章节：
-								</td>
-								<td>
-							  		<select name="search[questionsectionid]" class="combox form-control" id="sectionselect" target="knowsselect" refUrl="?exam-teach-questions-ajax-getknowsbysectionid&sectionid={value}">
-							  		<option value="0">选择章节</option>
-							  									  		</select>
-					        	</td>
-					        	<td>
-									知识点：
-								</td>
-								<td>
-							  		<select name="search[questionknowsid]" id="knowsselect" class="form-control">
-								  		<option value="">选择知识点</option>
-								  									  		</select>
-					        	</td>
-							</tr>
-							<tr>
-								<td>
-									录入人：
-								</td>
-					        	<td>
-					        		<input class="form-control" name="search[username]" size="10" type="text" value=""/>
-					        	</td>
-					        	<td>
-									试题类型：
-								</td>
-								<td>
-									<select name="search[questiontype]" class="form-control">
-								  		<option value="0">类型不限</option>
-								  										  		<option value="1">单选题</option>
-								  										  		<option value="2">多选题</option>
-								  										  		<option value="3">判断题</option>
-								  										  		<option value="4">问答题</option>
-								  										  		<option value="5">填空题</option>
-								  										  		<option value="6">定值填空题</option>
-								  									  		</select>
-								</td>
-								<td>
-									难度：
-								</td>
-								<td>
-									<select name="search[questionlevel]" class="form-control">
-								  		<option value="0">难度不限</option>
-										<option value="1">易</option>
-										<option value="2">中</option>
-										<option value="3">难</option>
-							  		</select>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<button class="btn btn-primary" type="submit">搜索</button>
-									<input type="hidden" value="1" name="search[argsmodel]" />
-								</td>
-								<td colspan="4"></td>
-							</tr>
-						</table>
-					</form>
-					<form action="index.php?exam-teach-questions-batdel" method="post">
-						<fieldset>
-							<table class="table table-hover table-bordered">
-								<thead>
-									<tr class="info">
-					                    <th width="32"><input type="checkbox" class="checkall" target="delids"/></th>
-					                    <th width="40">ID</th>
-								        <th width="80">试题类型</th>
-								        <th>试题内容</th>
-								        <th width="80">录入人</th>
-								        <th width="80">录入时间</th>
-								        <th width="48">难度</th>
-								        <th width="100">操作</th>
-					                </tr>
-					            </thead>
-					            <tbody>
-				                    							        <tr>
-										<td><input type="checkbox" name="delids[1650]" value="1"></td>
-										<td>
-											1650										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1650" data-target="#modal">醉酒导致伤亡的,也可以认定为工伤或者视同工伤。</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1650" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1650" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        							        <tr>
-										<td><input type="checkbox" name="delids[1649]" value="1"></td>
-										<td>
-											1649										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1649" data-target="#modal">阻火器的基本原理是由于液体封在气体进出之间,在液封两侧的任何一侧着火,火焰都将在液封底熄灭,从...</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1649" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1649" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        							        <tr>
-										<td><input type="checkbox" name="delids[1648]" value="1"></td>
-										<td>
-											1648										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1648" data-target="#modal">足够能量和温度的点火源和物质接触是物质得以燃烧的唯一条件。</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1648" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1648" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        							        <tr>
-										<td><input type="checkbox" name="delids[1647]" value="1"></td>
-										<td>
-											1647										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1647" data-target="#modal">综合演练通常成立演练领导小组,下设策划组、执行组、保障组、评估组等专业工作组。根据演练规模...</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1647" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1647" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        							        <tr>
-										<td><input type="checkbox" name="delids[1646]" value="1"></td>
-										<td>
-											1646										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1646" data-target="#modal">装贮汽油等易燃溶剂的容器,可以使用不导电的塑料容器。</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1646" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1646" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        							        <tr>
-										<td><input type="checkbox" name="delids[1645]" value="1"></td>
-										<td>
-											1645										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1645" data-target="#modal">装置有毒有害物质大量泄漏时,发现人员应立即向该装置当班人员报告。</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1645" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1645" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        							        <tr>
-										<td><input type="checkbox" name="delids[1644]" value="1"></td>
-										<td>
-											1644										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1644" data-target="#modal">装运危险货物的罐(槽)应配备泄压阀、防波板、遮阳物、压力表、液位计、导除静电等安全装置。</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1644" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1644" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        							        <tr>
-										<td><input type="checkbox" name="delids[1643]" value="1"></td>
-										<td>
-											1643										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1643" data-target="#modal">装卸易燃液体需穿防静电工作服,可以穿带铁钉鞋。</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1643" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1643" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        							        <tr>
-										<td><input type="checkbox" name="delids[1642]" value="1"></td>
-										<td>
-											1642										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1642" data-target="#modal">装卸易燃液体的管道,管道内表面越光滑,产生的静电荷越多;液体流速越快,产生的静电荷则越少。</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1642" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1642" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        							        <tr>
-										<td><input type="checkbox" name="delids[1641]" value="1"></td>
-										<td>
-											1641										</td>
-										<td>
-											判断题										</td>
-										<td>
-											<a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=1641" data-target="#modal">装卸和搬运易燃液体中,必须轻装轻卸,严禁滚动、摩擦、拖拉等危及安全的操作。</a>
-										</td>
-										<td>
-																					</td>
-										<td>
-											2016-11-09										</td>
-										<td>
-											易										</td>
-										<td>
-											<div class="btn-group">
-					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=1641" title="修改"><em class="glyphicon glyphicon-edit"></em></a>
-												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=1641" title="删除"><em class="glyphicon glyphicon-remove"></em></a>
-					                    	</div>
-										</td>
-							        </tr>
-							        					        	</tbody>
-					        </table>
-					        <div class="form-group">
-					            <div class="col-sm-9">
-						            <label class="radio-inline">
-						                <input type="radio" name="action" value="delete" checked/>删除
-						            </label>
-						            						            <label class="radio-inline">
-						            	<button class="btn btn-primary" type="submit">提交</button>
-						            </label>
-						            <input type="hidden" name="page" value=""/>
-						        </div>
-					        </div>
-					        <ul class="pagination pull-right">
-					            <li><a target="" href="index.php?exam-teach-questions&page=1">|&lsaquo;</a></li><li><a href="#" class="current">1</a></li><li><a target="" href="index.php?exam-teach-questions&page=2">2</a></li><li><a target="" href="index.php?exam-teach-questions&page=3">3</a></li><li><a target="" href="index.php?exam-teach-questions&page=4">4</a></li><li><a target="" href="index.php?exam-teach-questions&page=5">5</a></li><li><a target="" href="index.php?exam-teach-questions&page=6">6</a></li><li><a target="" href="index.php?exam-teach-questions&page=7">7</a></li><li><a target="" href="index.php?exam-teach-questions&page=8">8</a></li><li><a target="" href="index.php?exam-teach-questions&page=9">9</a></li><li><a target="" href="index.php?exam-teach-questions&page=10">10</a></li><li><a target="" href="index.php?exam-teach-questions&page=11"> >> </a></li><li><a target="" href="index.php?exam-teach-questions&page=165">&rsaquo;|</a></li><li><a>共1650条数据</a></li>					        </ul>
-				        </fieldset>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="modal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button aria-hidden="true" class="close" type="button" data-dismiss="modal">×</button>
-				<h4 id="myModalLabel">
-					试题详情
-				</h4>
-			</div>
-			<div class="modal-body"></div>
-			<div class="modal-footer">
-				 <button aria-hidden="true" class="btn btn-primary" data-dismiss="modal">关闭</button>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container-fluid box" style="background-color:#337AB7;margin-bottom:0px;" id="footer">
-	<div class="row-fluid">
-		<div class="main itembox">
-			<div class="col-xs-12">
-				<ul class="list-unstyled">
-				<!--
-					<li class="text-center"><a href="">PHPEMS在线模拟考试系统 著作权登记号：2013 SR 113189</a></li>
-					<li class="text-center"><a href="">Copyright © phpems.net  2015-2016</a></li>
-				-->
-				</ul>
-			</div>
-		</div>
-	</div>
-</div></body>
-</html>

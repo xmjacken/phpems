@@ -1,288 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>DAC模拟考试系统后台管理</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
-	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
-	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
-	<!--[if lt IE 9]>
-	<script src="app/core/styles/js/html5shiv.min.js"></script>
-	<script src="app/core/styles/js/respond.min.js"></script>
-	<![endif]-->
-	<script src="app/core/styles/js/jquery.min.js"></script>
-	<script src="app/core/styles/js/jquery-ui.min.js"></script>
-	<script src="app/core/styles/js/bootstrap.min.js"></script>
-	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
-
-	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
-
-	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
-	<script src="app/core/styles/js/plugin.js"></script>
-</head><body>
-<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">	<div class="row-fluid">		<div class="main">			<div class="col-xs-3">				<!--<h1 style="font-size:42px;color:#337AB7;">--><img src="app/core/styles/img/logo2.png" style="height:60px;margin-top:-10px;"/>&nbsp;<b>DAC在线考试管理平台</b><!--</h1>-->		</div>			<div class="col-xs-1">			</div>			<div class="col-xs-6" style="padding-top:22px;">				<div class="form-inline">					<div class="form-group">						<input type="text" style="width:380px;" class="form-control" id="keyword" placeholder="搜索课程/资料">					</div>					<button type="button" class="btn btn-info" onclick="javascript:window.location='index.php?content-app-search&keyword='+$('#keyword').val();">搜资料</button>					<button type="button" class="btn btn-primary" onclick="javascript:window.location='index.php?course-app-search&keyword='+$('#keyword').val();">搜课程</button>				</div>			</div>			<div class="col-xs-2" style="padding-top:22px;">				<ul class="list-unstyled list-inline">										<li>						<div class="btn-group">							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> peadmin</button>							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">								<span class="caret"></span>								<span class="sr-only">Toggle Dropdown</span>							</button>							<ul class="dropdown-menu">								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>								<li><a href="index.php?exam-teach"><em class="glyphicon glyphicon-book"></em> 教师管理</a></li>								<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>							</ul>						</div>					</li>									</ul>			</div>		</div>	</div></div><div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-12">				<ul class="list-unstyled list-inline">					<li class="menu col-xs-1"><a href="index.php" class="icon">首页</a></li>					<li class="menu col-xs-1"><a href="index.php?course">课程</a></li>					<li class="menu col-xs-1 active"><a href="index.php?exam">考试</a></li>				</ul>			</div>		</div>	</div></div><div class="container-fluid">
-	<div class="row-fluid">
-		<div class="main">
-			<div class="col-xs-2" style="padding-top:10px;margin-bottom:0px;">
-				<style>.panel-heading a{color:#FFFFFF;text-decoration:none;}</style><div class="panel-group" id="panel-13465">	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-707348">				<em class="glyphicon glyphglyphicon glyphicon-th-large"></em> 考试设计			</a>		</div>		<div id="panel-element-707348" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="?exam-teach-basic">考场列表</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-2120901">				<em class="glyphicon glyphglyphicon glyphicon-wrench"></em> 课程成绩			</a>		</div>		<div id="panel-element-2120901" class="panel-collapse in collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-users">成绩管理</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-212076">				<em class="glyphicon glyphglyphicon glyphicon-text-color"></em> 试题管理			</a>		</div>		<div id="panel-element-212076" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-questions">普通试题管理</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-rowsquestions">题帽题管理</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-212096">				<em class="glyphicon glyphglyphicon glyphicon-duplicate"></em> 试卷管理			</a>		</div>		<div id="panel-element-212096" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-exams">试卷列表</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-exams-autopage">随机组卷</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-exams-selfpage">手工组卷</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-exams-temppage">即时组卷</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-212090">				<em class="glyphicon glyphglyphicon glyphicon-trash"></em> 回收站			</a>		</div>		<div id="panel-element-212090" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-recyle">普通试题</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-recyle-rows">题帽题</a></li>			</ul>		</div>	</div></div>			</div>
-			<div class="col-xs-10" id="datacontent">
-				<div class="box itembox" style="margin-bottom:0px;border-bottom:1px solid #CCCCCC;">
-					<div class="col-xs-12">
-						<ol class="breadcrumb">
-							<li><a href="index.php?exam-teach">考试模块</a></li>
-							<li><a href="index.php?exam-teach-users">课程成绩</a></li>
-							<li class="active">成绩统计</li>
-						</ol>
-					</div>
-				</div>
-				<div class="box itembox" style="padding-top:10px;margin-bottom:0px;">
-					<h4 class="title" style="padding:10px;">
-						成绩统计
-						<a class="ajax pull-right btn btn-primary" href="index.php?exam-teach-users-outscore&basicid=1">导出成绩</a>
-					</h4>
-					<form action="index.php?exam-teach-users-scorelist&basicid=1" method="post">
-						<table class="table form-inline">
-					        <tr>
-								<td>
-									考试时间：
-								</td>
-								<td>
-									<input class="form-control datetimepicker" data-date="2016-11-10" data-date-format="yyyy-mm-dd" type="text" name="search[stime]" size="10" id="stime" value=""/> - <input class="form-control datetimepicker" data-date="2016-11-10" data-date-format="yyyy-mm-dd" size="10" type="text" name="search[etime]" id="etime" value=""/>
-								</td>
-								<td>
-									分数段：
-								</td>
-								<td>
-									<input class="form-control" name="search[sscore]" id="sscore" type="text" value=""/> - <input class="form-control" type="text" name="search[escore]" id="escore" value=""/>
-								</td>
-							</tr>
-					        <tr>
-					        	<td>
-									试卷：
-								</td>
-								<td>
-									<select name="search[examid]" class="form-control">
-								  		<option value="0">不限</option>
-								  										  		<option value="1">危化品知识考试</option>
-								  									  		</select>
-								</td>
-								<td>
-								</td>
-								<td><button class="btn btn-primary" type="submit">提交</button> <a class="btn btn-primary" href="index.php?exam-teach-users-stats&basicid=1">统计</a></td>
-					        </tr>
-						</table>
-						<div class="input">
-							<input type="hidden" value="1" name="search[argsmodel]" />
-						</div>
-					</form>
-			        <table class="table table-hover table-bordered">
-						<thead>
-							<tr class="info">
-			                    <th>ID</th>
-			                    <th>名次</th>
-			                    <th>考生用户名</th>
-			                    <th>分数</th>
-						        <th>考试名称</th>
-						        <th>考试时间</th>
-						        <th>考试用时</th>
-						        <th>操作</th>
-			                </tr>
-			            </thead>
-			            <tbody>
-		                    					        <tr>
-								<td>
-									21								</td>
-								<td>
-									1								</td>
-								<td>
-									玄昌伟								</td>
-								<td>
-									84.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 17:32								</td>
-								<td>
-									23分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=21" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=21" target="_blank">纠分</a></td>
-					        </tr>
-					        					        <tr>
-								<td>
-									20								</td>
-								<td>
-									2								</td>
-								<td>
-									玄昌伟								</td>
-								<td>
-									81.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 16:59								</td>
-								<td>
-									26分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=20" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=20" target="_blank">纠分</a></td>
-					        </tr>
-					        					        <tr>
-								<td>
-									19								</td>
-								<td>
-									3								</td>
-								<td>
-									吴兴第								</td>
-								<td>
-									90.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 16:22								</td>
-								<td>
-									14分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=19" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=19" target="_blank">纠分</a></td>
-					        </tr>
-					        					        <tr>
-								<td>
-									18								</td>
-								<td>
-									4								</td>
-								<td>
-									吴兴第								</td>
-								<td>
-									0.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 13:55								</td>
-								<td>
-									90分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=18" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=18" target="_blank">纠分</a></td>
-					        </tr>
-					        					        <tr>
-								<td>
-									17								</td>
-								<td>
-									5								</td>
-								<td>
-									玄昌伟								</td>
-								<td>
-									86.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 15:02								</td>
-								<td>
-									28分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=17" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=17" target="_blank">纠分</a></td>
-					        </tr>
-					        					        <tr>
-								<td>
-									16								</td>
-								<td>
-									6								</td>
-								<td>
-									蒋春林								</td>
-								<td>
-									96.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 14:22								</td>
-								<td>
-									68分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=16" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=16" target="_blank">纠分</a></td>
-					        </tr>
-					        					        <tr>
-								<td>
-									12								</td>
-								<td>
-									7								</td>
-								<td>
-									易沁								</td>
-								<td>
-									89.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 13:37								</td>
-								<td>
-									40分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=12" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=12" target="_blank">纠分</a></td>
-					        </tr>
-					        					        <tr>
-								<td>
-									8								</td>
-								<td>
-									8								</td>
-								<td>
-									王小军								</td>
-								<td>
-									84.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 12:07								</td>
-								<td>
-									32分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=8" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=8" target="_blank">纠分</a></td>
-					        </tr>
-					        					        <tr>
-								<td>
-									4								</td>
-								<td>
-									9								</td>
-								<td>
-									王来洲								</td>
-								<td>
-									8.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 11:37								</td>
-								<td>
-									9分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=4" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=4" target="_blank">纠分</a></td>
-					        </tr>
-					        					        <tr>
-								<td>
-									2								</td>
-								<td>
-									10								</td>
-								<td>
-									peadmin								</td>
-								<td>
-									46.00								</td>
-								<td>
-									危化品知识考试								</td>
-								<td>
-									2016-11-09 11:16								</td>
-								<td>
-									3分钟								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid=2" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid=2" target="_blank">纠分</a></td>
-					        </tr>
-					        			        	</tbody>
-			        </table>
-			        <ul class="pagination pull-right">
-			            			        </ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container-fluid box" style="background-color:#337AB7;margin-bottom:0px;" id="footer">
-	<div class="row-fluid">
-		<div class="main itembox">
-			<div class="col-xs-12">
-				<ul class="list-unstyled">
-				<!--
-					<li class="text-center"><a href="">PHPEMS在线模拟考试系统 著作权登记号：2013 SR 113189</a></li>
-					<li class="text-center"><a href="">Copyright © phpems.net  2015-2016</a></li>
-				-->
-				</ul>
-			</div>
-		</div>
-	</div>
-</div></body>
-</html>
