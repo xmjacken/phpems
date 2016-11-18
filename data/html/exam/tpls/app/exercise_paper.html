@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DAC在线考试管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery.json.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+	<script src="app/exam/styles/js/plugin.js"></script>
+</head><body data-spy="scroll" data-target="#myScrollspy">
+<div class="container-fluid" id="questioncontent">
+	<div class="row-fluid">
+		<div class="main box">
+			<div class="col-xs-3" id="questionbar">
+				<dl class="clear" style="width:270px;" data-spy="affix" data-offset-top="235" id="questionindex">
+					<dd>
+						<h2><a class="btn btn-danger col-xs-12" style="font-size:1.2em;"><span id="timer_h">00</span>：<span id="timer_m">00</span>：<span id="timer_s">00</span></a></h2>
+					</dd>
+					<dt class="float_l"><h4>&nbsp;</h4></dt>
+					<ul class="nav nav-tabs" role="tablist">
+																																																																		<li role="presentation" class="active"><a href="#qt_1" aria-controls="home" role="tab" data-toggle="tab">一</a></li>
+																																																																																																						<li role="presentation"><a href="#qt_3" aria-controls="home" role="tab" data-toggle="tab">二</a></li>
+																																																																																																																	</ul>
+					<div class="tab-content" style="margin-top:5px;" id="questionindex">
+																																																<div role="tabpanel" class="tab-pane tableindex active" id="qt_1">
+										                			                			                							<a id="sign_374" href="javascript:;" onclick="javascript:gotoquestion('374')" class="btn btn-default">1</a>
+										                			                							<a id="sign_408" href="javascript:;" onclick="javascript:gotoquestion('408')" class="btn btn-default">2</a>
+										                			                							<a id="sign_573" href="javascript:;" onclick="javascript:gotoquestion('573')" class="btn btn-default">3</a>
+										                			                							<a id="sign_90" href="javascript:;" onclick="javascript:gotoquestion('90')" class="btn btn-default">4</a>
+										                			                							<a id="sign_711" href="javascript:;" onclick="javascript:gotoquestion('711')" class="btn btn-default">5</a>
+										                			                							<a id="sign_326" href="javascript:;" onclick="javascript:gotoquestion('326')" class="btn btn-default">6</a>
+										                			                							<a id="sign_230" href="javascript:;" onclick="javascript:gotoquestion('230')" class="btn btn-default">7</a>
+										                			                							<a id="sign_438" href="javascript:;" onclick="javascript:gotoquestion('438')" class="btn btn-default">8</a>
+										                			                							<a id="sign_414" href="javascript:;" onclick="javascript:gotoquestion('414')" class="btn btn-default">9</a>
+										                			                							<a id="sign_471" href="javascript:;" onclick="javascript:gotoquestion('471')" class="btn btn-default">10</a>
+										                			                							<a id="sign_245" href="javascript:;" onclick="javascript:gotoquestion('245')" class="btn btn-default">11</a>
+										                			                							<a id="sign_428" href="javascript:;" onclick="javascript:gotoquestion('428')" class="btn btn-default">12</a>
+										                			                							<a id="sign_411" href="javascript:;" onclick="javascript:gotoquestion('411')" class="btn btn-default">13</a>
+										                			                							<a id="sign_321" href="javascript:;" onclick="javascript:gotoquestion('321')" class="btn btn-default">14</a>
+										                			                							<a id="sign_285" href="javascript:;" onclick="javascript:gotoquestion('285')" class="btn btn-default">15</a>
+										                			                							<a id="sign_721" href="javascript:;" onclick="javascript:gotoquestion('721')" class="btn btn-default">16</a>
+										                			                							<a id="sign_633" href="javascript:;" onclick="javascript:gotoquestion('633')" class="btn btn-default">17</a>
+										                			                							<a id="sign_34" href="javascript:;" onclick="javascript:gotoquestion('34')" class="btn btn-default">18</a>
+										                			                							<a id="sign_355" href="javascript:;" onclick="javascript:gotoquestion('355')" class="btn btn-default">19</a>
+										                			                							<a id="sign_129" href="javascript:;" onclick="javascript:gotoquestion('129')" class="btn btn-default">20</a>
+										                			                							<a id="sign_348" href="javascript:;" onclick="javascript:gotoquestion('348')" class="btn btn-default">21</a>
+										                			                							<a id="sign_621" href="javascript:;" onclick="javascript:gotoquestion('621')" class="btn btn-default">22</a>
+										                			                							<a id="sign_17" href="javascript:;" onclick="javascript:gotoquestion('17')" class="btn btn-default">23</a>
+										                			                							<a id="sign_322" href="javascript:;" onclick="javascript:gotoquestion('322')" class="btn btn-default">24</a>
+										                			                							<a id="sign_181" href="javascript:;" onclick="javascript:gotoquestion('181')" class="btn btn-default">25</a>
+										                			                							<a id="sign_289" href="javascript:;" onclick="javascript:gotoquestion('289')" class="btn btn-default">26</a>
+										                			                							<a id="sign_302" href="javascript:;" onclick="javascript:gotoquestion('302')" class="btn btn-default">27</a>
+										                			                							<a id="sign_212" href="javascript:;" onclick="javascript:gotoquestion('212')" class="btn btn-default">28</a>
+										                			                							<a id="sign_726" href="javascript:;" onclick="javascript:gotoquestion('726')" class="btn btn-default">29</a>
+										                			                							<a id="sign_755" href="javascript:;" onclick="javascript:gotoquestion('755')" class="btn btn-default">30</a>
+																				</div>
+																																																																														<div role="tabpanel" class="tab-pane tableindex" id="qt_3">
+										                			                			                							<a id="sign_1179" href="javascript:;" onclick="javascript:gotoquestion('1179')" class="btn btn-default">1</a>
+										                			                							<a id="sign_861" href="javascript:;" onclick="javascript:gotoquestion('861')" class="btn btn-default">2</a>
+										                			                							<a id="sign_1127" href="javascript:;" onclick="javascript:gotoquestion('1127')" class="btn btn-default">3</a>
+										                			                							<a id="sign_1636" href="javascript:;" onclick="javascript:gotoquestion('1636')" class="btn btn-default">4</a>
+										                			                							<a id="sign_1641" href="javascript:;" onclick="javascript:gotoquestion('1641')" class="btn btn-default">5</a>
+										                			                							<a id="sign_1086" href="javascript:;" onclick="javascript:gotoquestion('1086')" class="btn btn-default">6</a>
+										                			                							<a id="sign_1465" href="javascript:;" onclick="javascript:gotoquestion('1465')" class="btn btn-default">7</a>
+										                			                							<a id="sign_1077" href="javascript:;" onclick="javascript:gotoquestion('1077')" class="btn btn-default">8</a>
+										                			                							<a id="sign_1314" href="javascript:;" onclick="javascript:gotoquestion('1314')" class="btn btn-default">9</a>
+										                			                							<a id="sign_1505" href="javascript:;" onclick="javascript:gotoquestion('1505')" class="btn btn-default">10</a>
+										                			                							<a id="sign_887" href="javascript:;" onclick="javascript:gotoquestion('887')" class="btn btn-default">11</a>
+										                			                							<a id="sign_1397" href="javascript:;" onclick="javascript:gotoquestion('1397')" class="btn btn-default">12</a>
+										                			                							<a id="sign_1534" href="javascript:;" onclick="javascript:gotoquestion('1534')" class="btn btn-default">13</a>
+										                			                							<a id="sign_965" href="javascript:;" onclick="javascript:gotoquestion('965')" class="btn btn-default">14</a>
+										                			                							<a id="sign_1472" href="javascript:;" onclick="javascript:gotoquestion('1472')" class="btn btn-default">15</a>
+										                			                							<a id="sign_825" href="javascript:;" onclick="javascript:gotoquestion('825')" class="btn btn-default">16</a>
+										                			                							<a id="sign_1250" href="javascript:;" onclick="javascript:gotoquestion('1250')" class="btn btn-default">17</a>
+										                			                							<a id="sign_1034" href="javascript:;" onclick="javascript:gotoquestion('1034')" class="btn btn-default">18</a>
+										                			                							<a id="sign_1564" href="javascript:;" onclick="javascript:gotoquestion('1564')" class="btn btn-default">19</a>
+										                			                							<a id="sign_1642" href="javascript:;" onclick="javascript:gotoquestion('1642')" class="btn btn-default">20</a>
+										                			                							<a id="sign_829" href="javascript:;" onclick="javascript:gotoquestion('829')" class="btn btn-default">21</a>
+										                			                							<a id="sign_1451" href="javascript:;" onclick="javascript:gotoquestion('1451')" class="btn btn-default">22</a>
+										                			                							<a id="sign_1310" href="javascript:;" onclick="javascript:gotoquestion('1310')" class="btn btn-default">23</a>
+										                			                							<a id="sign_1239" href="javascript:;" onclick="javascript:gotoquestion('1239')" class="btn btn-default">24</a>
+										                			                							<a id="sign_823" href="javascript:;" onclick="javascript:gotoquestion('823')" class="btn btn-default">25</a>
+										                			                							<a id="sign_1569" href="javascript:;" onclick="javascript:gotoquestion('1569')" class="btn btn-default">26</a>
+										                			                							<a id="sign_1439" href="javascript:;" onclick="javascript:gotoquestion('1439')" class="btn btn-default">27</a>
+										                			                							<a id="sign_1347" href="javascript:;" onclick="javascript:gotoquestion('1347')" class="btn btn-default">28</a>
+										                			                							<a id="sign_1092" href="javascript:;" onclick="javascript:gotoquestion('1092')" class="btn btn-default">29</a>
+										                			                							<a id="sign_1330" href="javascript:;" onclick="javascript:gotoquestion('1330')" class="btn btn-default">30</a>
+										                			                							<a id="sign_1294" href="javascript:;" onclick="javascript:gotoquestion('1294')" class="btn btn-default">31</a>
+										                			                							<a id="sign_1510" href="javascript:;" onclick="javascript:gotoquestion('1510')" class="btn btn-default">32</a>
+										                			                							<a id="sign_1187" href="javascript:;" onclick="javascript:gotoquestion('1187')" class="btn btn-default">33</a>
+										                			                							<a id="sign_1631" href="javascript:;" onclick="javascript:gotoquestion('1631')" class="btn btn-default">34</a>
+										                			                							<a id="sign_889" href="javascript:;" onclick="javascript:gotoquestion('889')" class="btn btn-default">35</a>
+										                			                							<a id="sign_1475" href="javascript:;" onclick="javascript:gotoquestion('1475')" class="btn btn-default">36</a>
+										                			                							<a id="sign_968" href="javascript:;" onclick="javascript:gotoquestion('968')" class="btn btn-default">37</a>
+										                			                							<a id="sign_1008" href="javascript:;" onclick="javascript:gotoquestion('1008')" class="btn btn-default">38</a>
+										                			                							<a id="sign_1090" href="javascript:;" onclick="javascript:gotoquestion('1090')" class="btn btn-default">39</a>
+										                			                							<a id="sign_852" href="javascript:;" onclick="javascript:gotoquestion('852')" class="btn btn-default">40</a>
+										                			                							<a id="sign_1300" href="javascript:;" onclick="javascript:gotoquestion('1300')" class="btn btn-default">41</a>
+										                			                							<a id="sign_1457" href="javascript:;" onclick="javascript:gotoquestion('1457')" class="btn btn-default">42</a>
+										                			                							<a id="sign_1491" href="javascript:;" onclick="javascript:gotoquestion('1491')" class="btn btn-default">43</a>
+										                			                							<a id="sign_1168" href="javascript:;" onclick="javascript:gotoquestion('1168')" class="btn btn-default">44</a>
+										                			                							<a id="sign_1600" href="javascript:;" onclick="javascript:gotoquestion('1600')" class="btn btn-default">45</a>
+										                			                							<a id="sign_1020" href="javascript:;" onclick="javascript:gotoquestion('1020')" class="btn btn-default">46</a>
+										                			                							<a id="sign_958" href="javascript:;" onclick="javascript:gotoquestion('958')" class="btn btn-default">47</a>
+										                			                							<a id="sign_1130" href="javascript:;" onclick="javascript:gotoquestion('1130')" class="btn btn-default">48</a>
+										                			                							<a id="sign_1028" href="javascript:;" onclick="javascript:gotoquestion('1028')" class="btn btn-default">49</a>
+										                			                							<a id="sign_1621" href="javascript:;" onclick="javascript:gotoquestion('1621')" class="btn btn-default">50</a>
+										                			                							<a id="sign_1432" href="javascript:;" onclick="javascript:gotoquestion('1432')" class="btn btn-default">51</a>
+										                			                							<a id="sign_1099" href="javascript:;" onclick="javascript:gotoquestion('1099')" class="btn btn-default">52</a>
+										                			                							<a id="sign_981" href="javascript:;" onclick="javascript:gotoquestion('981')" class="btn btn-default">53</a>
+										                			                							<a id="sign_1106" href="javascript:;" onclick="javascript:gotoquestion('1106')" class="btn btn-default">54</a>
+										                			                							<a id="sign_1349" href="javascript:;" onclick="javascript:gotoquestion('1349')" class="btn btn-default">55</a>
+										                			                							<a id="sign_1095" href="javascript:;" onclick="javascript:gotoquestion('1095')" class="btn btn-default">56</a>
+										                			                							<a id="sign_891" href="javascript:;" onclick="javascript:gotoquestion('891')" class="btn btn-default">57</a>
+										                			                							<a id="sign_973" href="javascript:;" onclick="javascript:gotoquestion('973')" class="btn btn-default">58</a>
+										                			                							<a id="sign_1048" href="javascript:;" onclick="javascript:gotoquestion('1048')" class="btn btn-default">59</a>
+										                			                							<a id="sign_919" href="javascript:;" onclick="javascript:gotoquestion('919')" class="btn btn-default">60</a>
+										                			                							<a id="sign_1009" href="javascript:;" onclick="javascript:gotoquestion('1009')" class="btn btn-default">61</a>
+										                			                							<a id="sign_886" href="javascript:;" onclick="javascript:gotoquestion('886')" class="btn btn-default">62</a>
+										                			                							<a id="sign_1307" href="javascript:;" onclick="javascript:gotoquestion('1307')" class="btn btn-default">63</a>
+										                			                							<a id="sign_1406" href="javascript:;" onclick="javascript:gotoquestion('1406')" class="btn btn-default">64</a>
+										                			                							<a id="sign_1101" href="javascript:;" onclick="javascript:gotoquestion('1101')" class="btn btn-default">65</a>
+										                			                							<a id="sign_1575" href="javascript:;" onclick="javascript:gotoquestion('1575')" class="btn btn-default">66</a>
+										                			                							<a id="sign_955" href="javascript:;" onclick="javascript:gotoquestion('955')" class="btn btn-default">67</a>
+										                			                							<a id="sign_1546" href="javascript:;" onclick="javascript:gotoquestion('1546')" class="btn btn-default">68</a>
+										                			                							<a id="sign_1627" href="javascript:;" onclick="javascript:gotoquestion('1627')" class="btn btn-default">69</a>
+										                			                							<a id="sign_1014" href="javascript:;" onclick="javascript:gotoquestion('1014')" class="btn btn-default">70</a>
+																				</div>
+																																																																																																																	</div>
+				</dl>
+			</div>
+			<form id="form1" name="form1" method="post" action="index.php?exam-app-exercise-score" class="col-xs-9 split pull-right" style="padding:0px;">
+				<div class="box itembox">
+					<h2 class="text-center">11</h2>
+				</div>
+																																<div class="box itembox questionpanel" id="questype_1">
+					<blockquote class="questype">一、单选题</blockquote>
+				</div>
+				                                                				<div class="box itembox paperexamcontent" id="questions_374" rel="1">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('374',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_374">
+							<input id="time_374" type="hidden" name="time[374]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>黄磷在储存时应始终浸没在()中。					</div>
+															<div class="choice">
+                    	A、水  B、二硫化碳  C、煤油                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[374]" rel="374" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[374]" rel="374" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[374]" rel="374" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(1);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_408" rel="1">
+					<h4 class="title">
+						第2题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('408',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_408">
+							<input id="time_408" type="hidden" name="time[408]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>跨步电压触电是一种()。					</div>
+															<div class="choice">
+                    	A、直接接触触电   B、间接接触触电
+C、感应电压触电                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[408]" rel="408" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[408]" rel="408" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[408]" rel="408" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(0);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(2);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_573" rel="1">
+					<h4 class="title">
+						第3题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('573',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_573">
+							<input id="time_573" type="hidden" name="time[573]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>我国法定职业病有()种。					</div>
+															<div class="choice">
+                    	A、99   B、115   C、132                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[573]" rel="573" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[573]" rel="573" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[573]" rel="573" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(1);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(3);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_90" rel="1">
+					<h4 class="title">
+						第4题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('90',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_90">
+							<input id="time_90" type="hidden" name="time[90]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《危险化学品安全管理条例》规定,公安机关负责危险化学品的()管理。					</div>
+															<div class="choice">
+                    	A、日常监督  B、综合监督  C、公共安全                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[90]" rel="90" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[90]" rel="90" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[90]" rel="90" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(2);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(4);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_711" rel="1">
+					<h4 class="title">
+						第5题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('711',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_711">
+							<input id="time_711" type="hidden" name="time[711]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在国家安全生产管理体制中,工会行使()的职能。					</div>
+															<div class="choice">
+                    	A、国家监察 B、行政管理 C、群众监督                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[711]" rel="711" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[711]" rel="711" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[711]" rel="711" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(3);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(5);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_326" rel="1">
+					<h4 class="title">
+						第6题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('326',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_326">
+							<input id="time_326" type="hidden" name="time[326]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>根据能量转移理论的概念,事故的本质是()。					</div>
+															<div class="choice">
+                    	A、能量的不正常作用 B、造成人员死伤 C、造成经济损失                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[326]" rel="326" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[326]" rel="326" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[326]" rel="326" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(4);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(6);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_230" rel="1">
+					<h4 class="title">
+						第7题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('230',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_230">
+							<input id="time_230" type="hidden" name="time[230]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>不能用于擦洗设备的是()。					</div>
+															<div class="choice">
+                    	A、肥皂   B、洗衣粉  C、汽油                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[230]" rel="230" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[230]" rel="230" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[230]" rel="230" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(5);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(7);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_438" rel="1">
+					<h4 class="title">
+						第8题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('438',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_438">
+							<input id="time_438" type="hidden" name="time[438]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>能够作为人体防静电的措施之一是()。					</div>
+															<div class="choice">
+                    	A、应穿戴防静电工作服、鞋和手套
+B、应注意远离水、金属等良导体
+C、应定时检测静电                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[438]" rel="438" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[438]" rel="438" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[438]" rel="438" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(6);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(8);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_414" rel="1">
+					<h4 class="title">
+						第9题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('414',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_414">
+							<input id="time_414" type="hidden" name="time[414]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>劳动者离开用人单位时,有权索取本人职业健康监护档案复印件,用人单位应当如实、无偿提供,并在所提供的复印件上()。					</div>
+															<div class="choice">
+                    	A、盖章     B、签字   C、签章                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[414]" rel="414" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[414]" rel="414" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[414]" rel="414" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(7);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(9);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_471" rel="1">
+					<h4 class="title">
+						第10题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('471',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_471">
+							<input id="time_471" type="hidden" name="time[471]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>氢气瓶的规定涂色为()。					</div>
+															<div class="choice">
+                    	A、淡绿 B、淡黄 C、紫色                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[471]" rel="471" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[471]" rel="471" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[471]" rel="471" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(8);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(10);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_245" rel="1">
+					<h4 class="title">
+						第11题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('245',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_245">
+							<input id="time_245" type="hidden" name="time[245]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>触电事故中,绝大部分是()导致人身伤亡的。					</div>
+															<div class="choice">
+                    	A、人体接受电流遭到电击  B、烧伤 C、电休克                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[245]" rel="245" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[245]" rel="245" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[245]" rel="245" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(9);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(11);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_428" rel="1">
+					<h4 class="title">
+						第12题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('428',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_428">
+							<input id="time_428" type="hidden" name="time[428]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>某电化厂液氯工段发生液氯钢瓶爆炸,造成该工段414㎡厂房全部摧毁,相邻的冷冻厂厂房部分倒塌,两个厂房内设备、管线全部损毁。并造成附近办公楼及厂区周围280余间民房不同程度损坏。液氯工段当班的8名工人当场死亡。更为严重的是爆炸后氯气扩散7km,由于电化厂设在市区,与周围居民区距离较近,事故共导致千余人氯气中毒,数人死亡。直接经济损失若干。经调查最初爆炸的1只液氯钢瓶是由用户送到电化厂来充装液氯的。该用户在生产设备与液氯钢瓶连接管路上没有安装止逆阀、缓冲罐或其他防倒罐装置,致使氯化石蜡倒灌入液氯钢瓶中,而且在送来此钢瓶时也未向充装单位声明情况。负责充装钢瓶的液氯工段工人在充装液氯前没有对欲充装的钢瓶进行检查和清理,就进行液氯充装。充装时,钢瓶内的氯化石蜡和液氯发生化学反应,温度、压力升高,致使钢瓶发生爆炸,并导致周围钢瓶相继爆炸。双方工人均未经特种作业人员培训和考核,没有事故应急预案。根据上述描述,危险物品的生产、经营、储存单位应当建立()。					</div>
+															<div class="choice">
+                    	A、应急救援预案                      
+B、应急救援组织                     
+C、应急救援体系                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[428]" rel="428" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[428]" rel="428" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[428]" rel="428" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(10);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(12);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_411" rel="1">
+					<h4 class="title">
+						第13题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('411',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_411">
+							<input id="time_411" type="hidden" name="time[411]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>劳动者被诊断患有职业病,但用人单位没有依法参加工伤保险的,其医疗和生活保障由()。					</div>
+															<div class="choice">
+                    	A、当地政府承担
+B、患者本人承担
+C、该用人单位承担                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[411]" rel="411" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[411]" rel="411" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[411]" rel="411" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(11);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(13);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_321" rel="1">
+					<h4 class="title">
+						第14题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('321',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_321">
+							<input id="time_321" type="hidden" name="time[321]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>根据《易制毒化学品管理条例》,()是可以用于制毒的主要原料。					</div>
+															<div class="choice">
+                    	A、第一类  B、第二类  C、第三类                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[321]" rel="321" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[321]" rel="321" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[321]" rel="321" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(12);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(14);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_285" rel="1">
+					<h4 class="title">
+						第15题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('285',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_285">
+							<input id="time_285" type="hidden" name="time[285]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>对于危险性较大的重点岗位,生产经营单位应当制定重点工作岗位的()。					</div>
+															<div class="choice">
+                    	A、综合应急预案  B、专项应急预案  C、现场处置方案                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[285]" rel="285" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[285]" rel="285" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[285]" rel="285" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(13);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(15);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_721" rel="1">
+					<h4 class="title">
+						第16题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('721',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_721">
+							<input id="time_721" type="hidden" name="time[721]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在企业安全生产中,各管理机构之间、各种管理制度和方法之间,必须具有紧密的联系,形成相互制约的回路,才能有效。这体现了对()原则的运用。					</div>
+															<div class="choice">
+                    	A、反馈  B、封闭  C、整分合                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[721]" rel="721" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[721]" rel="721" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[721]" rel="721" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(14);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(16);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_633" rel="1">
+					<h4 class="title">
+						第17题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('633',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_633">
+							<input id="time_633" type="hidden" name="time[633]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>要充分利用好国家在安全生产和应急救援方面的投入政策,管好用好资金,坚持(),充分发挥投资效益。					</div>
+															<div class="choice">
+                    	A、节约办事原则
+B、建设与节约并重原则
+C、利旧与新建并重原则                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[633]" rel="633" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[633]" rel="633" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[633]" rel="633" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(15);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(17);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_34" rel="1">
+					<h4 class="title">
+						第18题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('34',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_34">
+							<input id="time_34" type="hidden" name="time[34]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>()属于易燃气体。					</div>
+															<div class="choice">
+                    	A、二氧化碳  B、乙炔  C、氧气                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[34]" rel="34" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[34]" rel="34" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[34]" rel="34" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(16);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(18);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_355" rel="1">
+					<h4 class="title">
+						第19题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('355',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_355">
+							<input id="time_355" type="hidden" name="time[355]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>国家鼓励和支持研制、开发、推广、应用有利于职业病防治和保护劳动者健康的()。					</div>
+															<div class="choice">
+                    	A、新技术、新工艺、新设备、新原料
+B、新技术、新装置、新设备、新材料
+C、新技术、新工艺、新设备、新材料                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[355]" rel="355" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[355]" rel="355" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[355]" rel="355" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(17);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(19);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_129" rel="1">
+					<h4 class="title">
+						第20题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('129',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_129">
+							<input id="time_129" type="hidden" name="time[129]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《易制毒化学品管理条例》规定,易制毒化学品分为()类。					</div>
+															<div class="choice">
+                    	A、二  B、三  C、四                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[129]" rel="129" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[129]" rel="129" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[129]" rel="129" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(18);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(20);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_348" rel="1">
+					<h4 class="title">
+						第21题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('348',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_348">
+							<input id="time_348" type="hidden" name="time[348]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>锅炉是()转换设备。					</div>
+															<div class="choice">
+                    	A、能量  B、质量  C、温度                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[348]" rel="348" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[348]" rel="348" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[348]" rel="348" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(19);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(21);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_621" rel="1">
+					<h4 class="title">
+						第22题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('621',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_621">
+							<input id="time_621" type="hidden" name="time[621]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>需要向使用者提供危险品事故应急咨询电话的是()。					</div>
+															<div class="choice">
+                    	A、生产单位  B、销售单位  C、安监机构                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[621]" rel="621" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[621]" rel="621" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[621]" rel="621" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(20);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(22);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_17" rel="1">
+					<h4 class="title">
+						第23题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('17',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_17">
+							<input id="time_17" type="hidden" name="time[17]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>()是通过有计划、有组织、有目的的形式来实现的。					</div>
+															<div class="choice">
+                    	A、定期安全生产检查  B、季节性及节假日前后安全生产检查  C、专业(项)安全生产检查                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[17]" rel="17" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[17]" rel="17" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[17]" rel="17" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(21);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(23);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_322" rel="1">
+					<h4 class="title">
+						第24题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('322',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_322">
+							<input id="time_322" type="hidden" name="time[322]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>根据国家标准《常用危险化学品分类及标志》,腐蚀品可分为酸性腐蚀品、碱性腐蚀品和()腐蚀品三项。					</div>
+															<div class="choice">
+                    	A、无机  B、有机  C、其它                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[322]" rel="322" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[322]" rel="322" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[322]" rel="322" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(22);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(24);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_181" rel="1">
+					<h4 class="title">
+						第25题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('181',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_181">
+							<input id="time_181" type="hidden" name="time[181]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在《常用危险化学品的分类及标志》中,腐蚀品的安全标志是()。					</div>
+															<div class="choice">
+                    	A、img:tq/2015915928860.png;img     B、img:tq/201591592146A、png;img  C、img:tq/20159159341C、png;img                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[181]" rel="181" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[181]" rel="181" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[181]" rel="181" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(23);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(25);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_289" rel="1">
+					<h4 class="title">
+						第26题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('289',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_289">
+							<input id="time_289" type="hidden" name="time[289]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>惰性气体、雾化水、卤代烃等均能对可燃雾滴的燃烧产生()作用。					</div>
+															<div class="choice">
+                    	A、加速  B、抑制  C、强化                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[289]" rel="289" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[289]" rel="289" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[289]" rel="289" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(24);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(26);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_302" rel="1">
+					<h4 class="title">
+						第27题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('302',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_302">
+							<input id="time_302" type="hidden" name="time[302]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>风险是特定危险事件发生的()与后果的结合。					</div>
+															<div class="choice">
+                    	A、必然性  B、可能性  C、危险性                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[302]" rel="302" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[302]" rel="302" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[302]" rel="302" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(25);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(27);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_212" rel="1">
+					<h4 class="title">
+						第28题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('212',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_212">
+							<input id="time_212" type="hidden" name="time[212]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>爆破片装置是一种()安全附件。					</div>
+															<div class="choice">
+                    	A、阀型   B、断裂型   C、熔化型                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[212]" rel="212" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[212]" rel="212" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[212]" rel="212" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(26);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(28);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_726" rel="1">
+					<h4 class="title">
+						第29题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('726',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_726">
+							<input id="time_726" type="hidden" name="time[726]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在试验安全阀之前,必须先校对(),以正确了解锅炉内的实际情况。					</div>
+															<div class="choice">
+                    	A、压力表   B、水位计  C、炉水pH值                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[726]" rel="726" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[726]" rel="726" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[726]" rel="726" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(27);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(29);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_755" rel="1">
+					<h4 class="title">
+						第30题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('755',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_755">
+							<input id="time_755" type="hidden" name="time[755]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>噪声引起的听觉器官损害特点是早期表现为()。					</div>
+															<div class="choice">
+                    	A、耳蜗底部受损  B、高频听力下降
+C、低频听力下降                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[755]" rel="755" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[755]" rel="755" value="B" />B </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[755]" rel="755" value="C" />C </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(28);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(30);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+																																																												<div class="box itembox questionpanel" id="questype_3">
+					<blockquote class="questype">二、判断题</blockquote>
+				</div>
+				                                                				<div class="box itembox paperexamcontent" id="questions_1179" rel="3">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1179',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1179">
+							<input id="time_1179" type="hidden" name="time[1179]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>扑灭金属火灾时禁止用水,可用干燥的砂子或特殊的灭火剂。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1179]" rel="1179" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1179]" rel="1179" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(29);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(31);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_861" rel="3">
+					<h4 class="title">
+						第2题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('861',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_861">
+							<input id="time_861" type="hidden" name="time[861]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>安全技术说明书中,混合物要填写有害性组分及其含量范围。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[861]" rel="861" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[861]" rel="861" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(30);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(32);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1127" rel="3">
+					<h4 class="title">
+						第3题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1127',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1127">
+							<input id="time_1127" type="hidden" name="time[1127]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>抗溶性泡沫不仅可以扑救一般液体烃类的火灾,还可以有效地扑救水溶性有机溶剂的火灾。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1127]" rel="1127" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1127]" rel="1127" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(31);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(33);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1636" rel="3">
+					<h4 class="title">
+						第4题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1636',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1636">
+							<input id="time_1636" type="hidden" name="time[1636]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>专项应急预案中应明确应急救援指挥机构总指挥、副总指挥以及各成员单位或人员的具体职责。应急救援指挥机构不可以设置相应的应急救援工作小组,明确各小组的工作任务及主要负责人职责。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1636]" rel="1636" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1636]" rel="1636" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(32);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(34);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1641" rel="3">
+					<h4 class="title">
+						第5题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1641',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1641">
+							<input id="time_1641" type="hidden" name="time[1641]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>装卸和搬运易燃液体中,必须轻装轻卸,严禁滚动、摩擦、拖拉等危及安全的操作。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1641]" rel="1641" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1641]" rel="1641" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(33);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(35);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1086" rel="3">
+					<h4 class="title">
+						第6题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1086',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1086">
+							<input id="time_1086" type="hidden" name="time[1086]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>混合物中可燃物浓度低于下限时因含有过量的空气,空气的冷却作用会阻止火焰的蔓延。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1086]" rel="1086" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1086]" rel="1086" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(34);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(36);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1465" rel="3">
+					<h4 class="title">
+						第7题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1465',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1465">
+							<input id="time_1465" type="hidden" name="time[1465]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>应急救援预案要有实用性、要根据本单位的实际条件制订,使预案便于操作。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1465]" rel="1465" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1465]" rel="1465" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(35);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(37);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1077" rel="3">
+					<h4 class="title">
+						第8题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1077',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1077">
+							<input id="time_1077" type="hidden" name="time[1077]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>化学事故应急救援过程中,对进入警戒区的人员可以自由出入,对进入重危区的人员要进行控制。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1077]" rel="1077" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1077]" rel="1077" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(36);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(38);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1314" rel="3">
+					<h4 class="title">
+						第9题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1314',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1314">
+							<input id="time_1314" type="hidden" name="time[1314]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>特种设备安全监督管理部门应当制定特种设备应急预案。特种设备使用单位应当制定事故应急专项预案,并定期进行事故应急演练。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1314]" rel="1314" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1314]" rel="1314" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(37);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(39);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1505" rel="3">
+					<h4 class="title">
+						第10题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1505',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1505">
+							<input id="time_1505" type="hidden" name="time[1505]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>用人单位应当实施由人兼职负责的职业病危害因素日常监测,并确保监测系统处于正常运行状态。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1505]" rel="1505" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1505]" rel="1505" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(38);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(40);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_887" rel="3">
+					<h4 class="title">
+						第11题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('887',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_887">
+							<input id="time_887" type="hidden" name="time[887]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>爆燃是火炸药或燃爆性气体混合物的快速燃烧。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[887]" rel="887" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[887]" rel="887" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(39);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(41);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1397" rel="3">
+					<h4 class="title">
+						第12题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1397',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1397">
+							<input id="time_1397" type="hidden" name="time[1397]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>泄漏导走法即用静电接地法,使带电体上的静电荷能够向大地泄漏走散。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1397]" rel="1397" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1397]" rel="1397" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(40);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(42);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1534" rel="3">
+					<h4 class="title">
+						第13题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1534',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1534">
+							<input id="time_1534" type="hidden" name="time[1534]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>运输散装固体危险物品,应根据性质,采取防火、防爆、防水、防粉尘飞扬和遮阳措施。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1534]" rel="1534" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1534]" rel="1534" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(41);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(43);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_965" rel="3">
+					<h4 class="title">
+						第14题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('965',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_965">
+							<input id="time_965" type="hidden" name="time[965]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>对混合时产生静电的物料,应加入抗静电剂等。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[965]" rel="965" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[965]" rel="965" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(42);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(44);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1472" rel="3">
+					<h4 class="title">
+						第15题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1472',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1472">
+							<input id="time_1472" type="hidden" name="time[1472]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>应急预案的编制可以应急准备代替应急保障措施,也能满足本地区、本部门、本单位的应急工作要求。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1472]" rel="1472" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1472]" rel="1472" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(43);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(45);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_825" rel="3">
+					<h4 class="title">
+						第16题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('825',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_825">
+							<input id="time_825" type="hidden" name="time[825]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《中华人民共和国安全生产法》规定,生产经营单位必须投保安全生产责任保险。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[825]" rel="825" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[825]" rel="825" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(44);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(46);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1250" rel="3">
+					<h4 class="title">
+						第17题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1250',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1250">
+							<input id="time_1250" type="hidden" name="time[1250]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位,将生产经营项目、场所、设备发包出租的,承包、承租单位的事故隐患排查治理自行负责。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1250]" rel="1250" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1250]" rel="1250" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(45);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(47);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1034" rel="3">
+					<h4 class="title">
+						第18题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1034',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1034">
+							<input id="time_1034" type="hidden" name="time[1034]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>固体粉碎和筛分,对于自反应性物质,可能因机械撞击、摩擦而发火,所以这类物质能否适用于筛分和粉碎必须十分慎重的考虑。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1034]" rel="1034" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1034]" rel="1034" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(46);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(48);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1564" rel="3">
+					<h4 class="title">
+						第19题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1564',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1564">
+							<input id="time_1564" type="hidden" name="time[1564]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在易燃易爆气体压缩机启动过程中,没有用惰性气体置换压缩机系统中的空气或置换不彻底就启动,都会引起燃烧爆炸事故。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1564]" rel="1564" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1564]" rel="1564" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(47);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(49);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1642" rel="3">
+					<h4 class="title">
+						第20题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1642',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1642">
+							<input id="time_1642" type="hidden" name="time[1642]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>装卸易燃液体的管道,管道内表面越光滑,产生的静电荷越多;液体流速越快,产生的静电荷则越少。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1642]" rel="1642" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1642]" rel="1642" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(48);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(50);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_829" rel="3">
+					<h4 class="title">
+						第21题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('829',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_829">
+							<input id="time_829" type="hidden" name="time[829]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《中华人民共和国安全生产法》规定,生产经营单位对负有安全生产监督管理职责的部门的监督检查人员依法履行监督检查职责,应当予以配合,不得拒绝、阻挠。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[829]" rel="829" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[829]" rel="829" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(49);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(51);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1451" rel="3">
+					<h4 class="title">
+						第22题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1451',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1451">
+							<input id="time_1451" type="hidden" name="time[1451]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>应急救援队伍接到报警后,应立即根据事故情况,调集救援力量,携带专用器材,分配救援任务,下达救援指令,迅速赶赴事故现场。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1451]" rel="1451" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1451]" rel="1451" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(50);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(52);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1310" rel="3">
+					<h4 class="title">
+						第23题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1310',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1310">
+							<input id="time_1310" type="hidden" name="time[1310]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>碳化钙的储存库房,应当处于阴暗潮湿,并经常通风的库房内。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1310]" rel="1310" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1310]" rel="1310" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(51);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(53);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1239" rel="3">
+					<h4 class="title">
+						第24题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1239',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1239">
+							<input id="time_1239" type="hidden" name="time[1239]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>上罐作业只能使用防爆灯具,并注意不可失落。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1239]" rel="1239" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1239]" rel="1239" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(52);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(54);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_823" rel="3">
+					<h4 class="title">
+						第25题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('823',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_823">
+							<input id="time_823" type="hidden" name="time[823]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《中华人民共和国安全生产法》规定,两个以上生产经营单位在同一作业区域内进行可能危及对方安全生产的生产经营活动,未签订安全生产管理协议或者未指定专职安全生产管理人员进行安全检查与协调的,责令限期改正,可以处二万元以下的罚款。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[823]" rel="823" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[823]" rel="823" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(53);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(55);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1569" rel="3">
+					<h4 class="title">
+						第26题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1569',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1569">
+							<input id="time_1569" type="hidden" name="time[1569]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在应急救援过程中生产经营单位保卫部门负责灭火、警戒、治安保卫、疏散、事故现场通信联络和对外联系、道路管制等工作。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1569]" rel="1569" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1569]" rel="1569" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(54);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(56);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1439" rel="3">
+					<h4 class="title">
+						第27题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1439',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1439">
+							<input id="time_1439" type="hidden" name="time[1439]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>乙炔铜爆炸是简单分解爆炸。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1439]" rel="1439" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1439]" rel="1439" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(55);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(57);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1347" rel="3">
+					<h4 class="title">
+						第28题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1347',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1347">
+							<input id="time_1347" type="hidden" name="time[1347]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>危险化学品建设项目竣工,未进行职业中毒危害控制效果评价,或者未经卫生行政部门验收,可以投入生产、运行。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1347]" rel="1347" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1347]" rel="1347" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(56);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(58);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1092" rel="3">
+					<h4 class="title">
+						第29题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1092',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1092">
+							<input id="time_1092" type="hidden" name="time[1092]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>机动车辆严禁在易燃易爆危险场所内行驶,必要时必须装火星熄灭器。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1092]" rel="1092" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1092]" rel="1092" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(57);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(59);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1330" rel="3">
+					<h4 class="title">
+						第30题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1330',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1330">
+							<input id="time_1330" type="hidden" name="time[1330]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>突发环境事件报告中初报是查清有关基本情况后随时上报。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1330]" rel="1330" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1330]" rel="1330" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(58);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(60);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1294" rel="3">
+					<h4 class="title">
+						第31题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1294',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1294">
+							<input id="time_1294" type="hidden" name="time[1294]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>事故隐患分为一般事故隐患、较大事故隐患、重大事故隐患、特大事故隐患。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1294]" rel="1294" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1294]" rel="1294" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(59);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(61);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1510" rel="3">
+					<h4 class="title">
+						第32题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1510',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1510">
+							<input id="time_1510" type="hidden" name="time[1510]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>由于在食盐水电解过程中氢气存在,故有着火爆炸的危险,所以电解槽应安装在自然通风良好的单层建筑物内,厂房应有足够的防爆泄压面积。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1510]" rel="1510" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1510]" rel="1510" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(60);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(62);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1187" rel="3">
+					<h4 class="title">
+						第33题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1187',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1187">
+							<input id="time_1187" type="hidden" name="time[1187]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>企业要加强对各种救援队伍的培训,保证人员能够熟悉事故发生后所采取的对应方法和步骤,做到应知应会。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1187]" rel="1187" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1187]" rel="1187" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(61);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(63);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1631" rel="3">
+					<h4 class="title">
+						第34题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1631',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1631">
+							<input id="time_1631" type="hidden" name="time[1631]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>专项应急预案应按照综合应急预案的程序和要求组织制定,不作为综合应急预案的附件。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1631]" rel="1631" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1631]" rel="1631" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(62);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(64);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_889" rel="3">
+					<h4 class="title">
+						第35题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('889',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_889">
+							<input id="time_889" type="hidden" name="time[889]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>爆炸品仓库应为单层建筑,周围不宜装设避雷针。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[889]" rel="889" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[889]" rel="889" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(63);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(65);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1475" rel="3">
+					<h4 class="title">
+						第36题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1475',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1475">
+							<input id="time_1475" type="hidden" name="time[1475]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>应急预案的编制应该有明确、具体的事故预防措施和应急程序,并与其应急能力相适应。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1475]" rel="1475" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1475]" rel="1475" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(64);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(66);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_968" rel="3">
+					<h4 class="title">
+						第37题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('968',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_968">
+							<input id="time_968" type="hidden" name="time[968]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>对已确定的重大危险源应在建筑设计、设备设计、环境设计采取有关的消防、安全措施。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[968]" rel="968" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[968]" rel="968" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(65);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(67);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1008" rel="3">
+					<h4 class="title">
+						第38题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1008',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1008">
+							<input id="time_1008" type="hidden" name="time[1008]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>感知电流一般不会对人体造成伤害,但可能因不自主反应而导致由高处跌落等二次事故。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1008]" rel="1008" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1008]" rel="1008" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(66);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(68);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1090" rel="3">
+					<h4 class="title">
+						第39题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1090',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1090">
+							<input id="time_1090" type="hidden" name="time[1090]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>火灾通常指违背人们的意志,在时间和空间上失去控制的燃烧所造成的灾害。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1090]" rel="1090" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1090]" rel="1090" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(67);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(69);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_852" rel="3">
+					<h4 class="title">
+						第40题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('852',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_852">
+							<input id="time_852" type="hidden" name="time[852]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>安全阀按其整体结构及加载机构的不同可以分为重锤杠杆式、弹簧式和脉冲式三种。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[852]" rel="852" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[852]" rel="852" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(68);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(70);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1300" rel="3">
+					<h4 class="title">
+						第41题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1300',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1300">
+							<input id="time_1300" type="hidden" name="time[1300]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>输送生产用有毒物料,腐蚀性介质和污水等的管道不得穿越居民住宅区或人员集中的生产管理区。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1300]" rel="1300" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1300]" rel="1300" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(69);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(71);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1457" rel="3">
+					<h4 class="title">
+						第42题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1457',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1457">
+							<input id="time_1457" type="hidden" name="time[1457]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>应急救援过程中,应急救援人员要在警戒区边界实施不间断的检测,以确保警戒区的有效性。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1457]" rel="1457" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1457]" rel="1457" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(70);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(72);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1491" rel="3">
+					<h4 class="title">
+						第43题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1491',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1491">
+							<input id="time_1491" type="hidden" name="time[1491]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>用人单位不承担职业健康检查费用,给予警告,责令限期改正,可以并处3万元以下的罚款。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1491]" rel="1491" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1491]" rel="1491" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(71);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(73);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1168" rel="3">
+					<h4 class="title">
+						第44题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1168',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1168">
+							<input id="time_1168" type="hidden" name="time[1168]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>某化工厂准备开展一次应急响应功能演习,演习计划将盛有丙烯腈的储罐运到这片空地,但是为了防止演习发生意外事故,储罐只剩余约1/5体积的丙烯腈。根据上述描述,请判断,该厂演习有毒有害气体泄漏事故时,可以使用真正的有毒化学品。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1168]" rel="1168" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1168]" rel="1168" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(72);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(74);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1600" rel="3">
+					<h4 class="title">
+						第45题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1600',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1600">
+							<input id="time_1600" type="hidden" name="time[1600]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>职业病危害严重的建设项目的防护设施设计,应当经安全生产监督管理部门审查,符合国家职业卫生标准和卫生要求的,方可施工。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1600]" rel="1600" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1600]" rel="1600" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(73);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(75);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1020" rel="3">
+					<h4 class="title">
+						第46题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1020',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1020">
+							<input id="time_1020" type="hidden" name="time[1020]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>根据《危险化学品安全管理条例》,有关单位和个人对依法进行的危险化学品安全监督检查应当予以配合,不得拒绝、阻碍。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1020]" rel="1020" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1020]" rel="1020" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(74);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(76);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_958" rel="3">
+					<h4 class="title">
+						第47题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('958',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_958">
+							<input id="time_958" type="hidden" name="time[958]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>毒物和粉尘的识别关键在于生产物料的确认和工艺过程的调查分析。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[958]" rel="958" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[958]" rel="958" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(75);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(77);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1130" rel="3">
+					<h4 class="title">
+						第48题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1130',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1130">
+							<input id="time_1130" type="hidden" name="time[1130]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>可能产生职业中毒危害的建设项目的职业中毒危害防护设施应当与主体工程同时设计,同时施工,同时投入生产和使用;建设项目竣工,应当进行职业中毒危害控制效果评价,并经卫生行政部门验收合格。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1130]" rel="1130" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1130]" rel="1130" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(76);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(78);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1028" rel="3">
+					<h4 class="title">
+						第49题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1028',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1028">
+							<input id="time_1028" type="hidden" name="time[1028]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>工业生产中的安全阀,用得比较普遍的是脉冲式安全阀。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1028]" rel="1028" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1028]" rel="1028" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(77);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(79);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1621" rel="3">
+					<h4 class="title">
+						第50题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1621',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1621">
+							<input id="time_1621" type="hidden" name="time[1621]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中小型危险化学品生产企业不必为从业人员缴纳保险费。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1621]" rel="1621" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1621]" rel="1621" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(78);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(80);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1432" rel="3">
+					<h4 class="title">
+						第51题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1432',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1432">
+							<input id="time_1432" type="hidden" name="time[1432]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>一次事故中死亡3~9人的是特大生产安全事故。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1432]" rel="1432" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1432]" rel="1432" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(79);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(81);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1099" rel="3">
+					<h4 class="title">
+						第52题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1099',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1099">
+							<input id="time_1099" type="hidden" name="time[1099]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>建设项目的职业病防护设施发生重大变更的,建设单位应当重新进行职业病危害预评价,办理相应的备案或者审核手续。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1099]" rel="1099" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1099]" rel="1099" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(80);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(82);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_981" rel="3">
+					<h4 class="title">
+						第53题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('981',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_981">
+							<input id="time_981" type="hidden" name="time[981]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>对于在应急预案编制和管理工作中做出显著成绩的单位和人员,安全生产监督管理部门、生产经营单位可以给予表彰和奖励。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[981]" rel="981" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[981]" rel="981" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(81);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(83);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1106" rel="3">
+					<h4 class="title">
+						第54题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1106',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1106">
+							<input id="time_1106" type="hidden" name="time[1106]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>降低摩擦速度或流速等工艺参数可促进静电的产生。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1106]" rel="1106" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1106]" rel="1106" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(82);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(84);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1349" rel="3">
+					<h4 class="title">
+						第55题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1349',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1349">
+							<input id="time_1349" type="hidden" name="time[1349]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>危险化学品可以露天堆放。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1349]" rel="1349" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1349]" rel="1349" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(83);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(85);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1095" rel="3">
+					<h4 class="title">
+						第56题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1095',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1095">
+							<input id="time_1095" type="hidden" name="time[1095]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>计算液化气体气瓶的充装量,由于气瓶余气(余液)重量相对而言比较小,因此可以忽略不计。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1095]" rel="1095" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1095]" rel="1095" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(84);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(86);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_891" rel="3">
+					<h4 class="title">
+						第57题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('891',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_891">
+							<input id="time_891" type="hidden" name="time[891]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>爆炸品主要具有反应速度极快,放出大量的热,产生大量的气体等特性。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[891]" rel="891" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[891]" rel="891" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(85);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(87);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_973" rel="3">
+					<h4 class="title">
+						第58题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('973',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_973">
+							<input id="time_973" type="hidden" name="time[973]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>对于加工、运输、储存可燃性气体的设备检修,必须经置换分析合格后才能进行检修。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[973]" rel="973" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[973]" rel="973" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(86);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(88);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1048" rel="3">
+					<h4 class="title">
+						第59题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1048',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1048">
+							<input id="time_1048" type="hidden" name="time[1048]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>国家对严重危及生产安全的工艺、设备实行淘汰制度。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1048]" rel="1048" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1048]" rel="1048" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(87);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(89);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_919" rel="3">
+					<h4 class="title">
+						第60题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('919',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_919">
+							<input id="time_919" type="hidden" name="time[919]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>储存危险化学品的仓库必须配备有专业知识的技术人员,其仓库及场所应设专人管理,管理人员必须配备可靠的个人安全防护用品。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[919]" rel="919" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[919]" rel="919" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(88);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(90);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1009" rel="3">
+					<h4 class="title">
+						第61题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1009',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1009">
+							<input id="time_1009" type="hidden" name="time[1009]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>高毒作业场所职业中毒危害因素不符合国家职业卫生标准和卫生要求时,用人单位必须立即停止高毒作业,并采取相应的治理措施;经治理,职业中毒危害因素符合国家职业卫生标准和卫生要求的,方可重新作业。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1009]" rel="1009" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1009]" rel="1009" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(89);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(91);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_886" rel="3">
+					<h4 class="title">
+						第62题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('886',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_886">
+							<input id="time_886" type="hidden" name="time[886]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>爆破片装置由爆破片和夹持器两部分组成。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[886]" rel="886" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[886]" rel="886" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(90);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(92);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1307" rel="3">
+					<h4 class="title">
+						第63题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1307',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1307">
+							<input id="time_1307" type="hidden" name="time[1307]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>虽然静电电压很高,但电量不大,所以危害不太大。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1307]" rel="1307" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1307]" rel="1307" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(91);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(93);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1406" rel="3">
+					<h4 class="title">
+						第64题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1406',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1406">
+							<input id="time_1406" type="hidden" name="time[1406]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>压力容器的特种设备作业人员,应当按照有关规定经本单位安全监督管理部门考核合格后,方可从事相应的作业或者管理工作。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1406]" rel="1406" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1406]" rel="1406" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(92);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(94);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1101" rel="3">
+					<h4 class="title">
+						第65题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1101',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1101">
+							<input id="time_1101" type="hidden" name="time[1101]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>建设项目在竣工验收后,建设单位应当进行职业病危害控制效果评价。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1101]" rel="1101" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1101]" rel="1101" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(93);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(95);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1575" rel="3">
+					<h4 class="title">
+						第66题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1575',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1575">
+							<input id="time_1575" type="hidden" name="time[1575]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在职业危害识别过程中,生产中使用的全部化学品、中间产物和产品均需要进行职业卫生检测。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1575]" rel="1575" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1575]" rel="1575" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(94);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(96);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_955" rel="3">
+					<h4 class="title">
+						第67题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('955',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_955">
+							<input id="time_955" type="hidden" name="time[955]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>电源中性点与零点的区别在于:当电源中性点与接地装置有着良好连接时,中性点便称零点。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[955]" rel="955" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[955]" rel="955" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(95);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(97);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1546" rel="3">
+					<h4 class="title">
+						第68题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1546',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1546">
+							<input id="time_1546" type="hidden" name="time[1546]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在化工生产中,为了保证安全生产,一般都在爆炸极限之外的条件下选择安全操作的温度和压力。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1546]" rel="1546" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1546]" rel="1546" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(96);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(98);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1627" rel="3">
+					<h4 class="title">
+						第69题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1627',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1627">
+							<input id="time_1627" type="hidden" name="time[1627]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>周围环境发生变化,形成新的重大危险源的应当及时修订应急预案。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1627]" rel="1627" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1627]" rel="1627" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(97);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																		<a class="pull-right btn btn-primary" onclick="javascript:gotoindexquestion(99);">下一题<span class="glyphicon glyphicon-chevron-right"></span></a>
+											</div>
+				</div>
+				                                				<div class="box itembox paperexamcontent" id="questions_1014" rel="3">
+					<h4 class="title">
+						第70题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a class="btn btn-info qicon" href="javascript:;" onclick="javascript:signQuestion('1014',this);"><i class="glyphicon glyphicon-bookmark"></i></a>
+							<a name="question_1014">
+							<input id="time_1014" type="hidden" name="time[1014]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>各级安全生产监督管理部门应当将应急预案的培训纳入安全生产培训工作计划,并组织实施本行政区域内重点生产经营单位的应急预案培训工作。					</div>
+															<div class="choice">
+                    	A、正确  B、错误                    </div>
+                    					<div class="selector">
+                    		                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1014]" rel="1014" value="A" />A </label>
+	                        	                        	                        <label class="radio-inline"><input type="radio" name="question[1014]" rel="1014" value="B" />B </label>
+	                        	                        	                        	                                        </div>
+										<div class="toolbar">
+												<a class="btn btn-default" onclick="javascript:gotoindexquestion(98);"><span class="glyphicon glyphicon-chevron-left"></span>上一题</a>
+																	</div>
+				</div>
+																																																																																				<h3 class="text-center">
+					<input type="hidden" name="insertscore" value="1"/>
+					<a class="btn btn-primary" style="font-size:1em;width:270px;" href="#submodal" role="button" data-toggle="modal">交 卷</a>
+				</h3>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="submodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">交卷</h4>
+			</div>
+			<div class="modal-body">
+				<p>共有试题 <span class="allquestionnumber">50</span> 题，已做 <span class="yesdonumber">0</span> 题。您确认要交卷吗？</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" onclick="javascript:submitPaper();" class="btn btn-primary">确定交卷</button>
+				<button aria-hidden="true" class="btn" type="button" data-dismiss="modal">再检查一下</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+var qindex = 0;
+function gotoquestion(questid)
+{
+	$(".questionpanel").hide();
+	$(".paperexamcontent").hide();
+	$("#questions_"+questid).show();
+	$("#questype_"+$("#questions_"+questid).attr('rel')).show();
+}
+function gotoindexquestion(index)
+{
+	$(".questionpanel").hide();
+	$(".paperexamcontent").hide();
+	$(".paperexamcontent").eq(index).show();
+	$("#questype_"+$(".paperexamcontent").eq(index).attr('rel')).show();
+}
+$(document).ready(function(){
+	$.get('index.php?exam-app-index-ajax-lefttime&rand'+Math.random(),function(data){
+		var setting = {
+						time:60,
+						hbox:$("#timer_h"),
+			mbox:$("#timer_m"),
+			sbox:$("#timer_s"),
+			finish:function(){
+				submitPaper();
+			}
+		}
+		setting.lefttime = parseInt(data);
+		countdown(setting);
+	});
+
+	(function(){
+		$(".questionpanel").hide();
+		$(".questionpanel:first").show();
+		$(".paperexamcontent").hide();
+		$(".paperexamcontent:first").show();
+	})();
+
+	setInterval(saveanswer,120000);
+
+	initData = $.parseJSON(storage.getItem('questions'));
+	if(initData){
+		for(var p in initData){
+			if(p!='set')
+			formData[p]=initData[p];
+			$("#time_"+$('[name="'+p+'"]').attr('rel')).val(initData[p].time);
+		}
+
+		var textarea = $('#form1 textarea');
+		$.each(textarea,function(){
+			var _this = $(this);
+			if(initData[_this.attr('name')])
+			{
+				_this.val(initData[_this.attr('name')].value);
+				CKEDITOR.instances[_this.attr('id')].setData(initData[_this.attr('name')].value);
+				if(initData[_this.attr('name')].value && initData[_this.attr('name')].value != '')
+				batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+			}
+		});
+		var texts = $('#form1 :input[type=text]');
+		$.each(texts,function(){
+			var _this = $(this);
+			if(initData[_this.attr('name')])
+			{
+				_this.val(initData[_this.attr('name')]?initData[_this.attr('name')].value:'');
+				if(initData[_this.attr('name')].value && initData[_this.attr('name')].value != '')
+				batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+			}
+		});
+
+		var radios = $('#form1 :input[type=radio]');
+		$.each(radios,function(){
+			var _= this, v = initData[_.name]?initData[_.name].value:null;
+			var _this = $(this);
+			if(v!=''&&v==_.value){
+				_.checked = true;
+				batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+			}else{
+				_.checked=false;
+			}
+		});
+
+		var checkboxs=$('#form1 :input[type=checkbox]');
+		$.each(checkboxs,function(){
+			var _=this,v=initData[_.name]?initData[_.name].value:null;
+			var _this = $(this);
+			if(v!=''&&v==_.value){
+				_.checked=true;
+				batmark(_this.attr('rel'),initData[_this.attr('name')].value);
+			}else{
+				_.checked=false;
+			}
+		});
+	}
+
+	$('#form1 :input[type=text]').change(function(){
+		var _this=$(this);
+		var p=[];
+		p.push(_this.attr('name'));
+		p.push(_this.val());
+		p.push(Date.parse(new Date())/1000);
+		$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+		set.apply(formData,p);
+		markQuestion(_this.attr('rel'),true);
+	});
+
+	$('#form1 :input[type=radio]').change(function(){
+		var _=this;
+		var _this=$(this);
+		var p=[];
+		p.push(_.name);
+		if(_.checked){
+			p.push(_.value);
+			p.push(Date.parse(new Date())/1000);
+			$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+			set.apply(formData,p);
+		}else{
+			p.push('');
+			p.push(null);
+			set.apply(formData,p);
+		}
+		markQuestion(_this.attr('rel'));
+	});
+
+	$('#form1 textarea').change(function(){
+		var _= this;
+		var _this=$(this);
+		var p=[];
+		p.push(_.name);
+		p.push(_.value);
+		p.push(Date.parse(new Date())/1000);
+		$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+		set.apply(formData,p);
+		markQuestion(_this.attr('rel'),true);
+	});
+	$('#form1 :input[type=checkbox]').change(function(){
+		var _= this;
+		var _this = $(this);
+		var p=[];
+		p.push(_.name);
+		if(_.checked){
+			p.push(_.value);
+			p.push(Date.parse(new Date())/1000);
+			$('#time_'+_this.attr('rel')).val(Date.parse(new Date())/1000);
+			set.apply(formData,p);
+		}else{
+			p.push('');
+			p.push(null);
+			set.apply(formData,p);
+		}
+		markQuestion(_this.attr('rel'));
+	});
+	$('.allquestionnumber').html($('.paperexamcontent').length);
+	$('.yesdonumber').html($('#questionindex .btn-primary').length);
+});
+</script>
+</body>
+</html>

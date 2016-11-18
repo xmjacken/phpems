@@ -1,0 +1,4345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DAC在线考试管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery.json.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+	<script src="app/exam/styles/js/plugin.js"></script>
+</head><body data-spy="scroll" data-target="#myScrollspy">
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-3">
+				<h1 style="font-size:42px;color:#337AB7;"><img src="app/core/styles/img/daclogo.png" style="height:60px;margin-top:-10px;"/>&nbsp;<b></b></h1>
+			</div>
+			<div class="col-xs-1">
+			</div>
+			<div class="col-xs-6" style="padding-top:22px;">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="text" style="width:380px;" class="form-control" id="keyword" placeholder="搜索课程/资料">
+					</div>
+					<button type="button" class="btn btn-info" onclick="javascript:window.location='index.php?content-app-search&keyword='+$('#keyword').val();">搜资料</button>
+					<button type="button" class="btn btn-primary" onclick="javascript:window.location='index.php?course-app-search&keyword='+$('#keyword').val();">搜课程</button>
+				</div>
+			</div>
+			<div class="col-xs-2" style="padding-top:22px;">
+				<ul class="list-unstyled list-inline">
+										<li>
+						<div class="btn-group">
+							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> 陈晓琳</button>
+							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>
+																								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>
+							</ul>
+						</div>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-12">
+				<ul class="list-unstyled list-inline"><!--
+					<li class="menu col-xs-1"><a href="index.php" class="icon">首页</a></li>
+					<li class="menu col-xs-1"><a href="index.php?course">课程</a></li>
+					<li class="menu col-xs-1 active"><a href="index.php?exam">考试</a></li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="box itembox">
+				<div class="col-xs-12">
+					<ol class="breadcrumb">
+					  <li><a href="index.php">首页</a></li>
+					  <li><a href="index.php?exam-app">考试</a></li>
+					  <li><a href="index.php?exam-app-basics">危化品知识考场</a></li>
+					  <li><a href="index.php?exam-app-history">考试记录</a></li>
+					  <li class="active">11</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" id="questioncontent">
+	<div class="row-fluid">
+		<div class="main box">
+			<div class="col-xs-3" id="questionbar">
+				<dl class="clear" style="width:270px;" data-spy="affix" data-offset-top="235">
+					<dt class="float_l"><h4>&nbsp;</h4></dt>
+					<ul class="nav nav-tabs" role="tablist">
+																																				<li role="presentation" class="active"><a href="#qt_1" aria-controls="home" role="tab" data-toggle="tab">一</a></li>
+																																																						<li role="presentation"><a href="#qt_3" aria-controls="home" role="tab" data-toggle="tab">二</a></li>
+																																																																							</ul>
+					<div class="tab-content" style="margin-top:5px;" id="questionindex">
+																																				<div role="tabpanel" class="tab-pane tableindex active" id="qt_1">
+										                			                							<a id="sign_27" href="#question_27" class="btn btn-default">1</a>
+										                							<a id="sign_54" href="#question_54" class="btn btn-default">2</a>
+										                							<a id="sign_81" href="#question_81" class="btn btn-default">3</a>
+										                							<a id="sign_86" href="#question_86" class="btn btn-default">4</a>
+										                							<a id="sign_147" href="#question_147" class="btn btn-default">5</a>
+										                							<a id="sign_169" href="#question_169" class="btn btn-default">6</a>
+										                							<a id="sign_176" href="#question_176" class="btn btn-default">7</a>
+										                							<a id="sign_191" href="#question_191" class="btn btn-default">8</a>
+										                							<a id="sign_211" href="#question_211" class="btn btn-default">9</a>
+										                							<a id="sign_280" href="#question_280" class="btn btn-default">10</a>
+										                							<a id="sign_298" href="#question_298" class="btn btn-default">11</a>
+										                							<a id="sign_348" href="#question_348" class="btn btn-default">12</a>
+										                							<a id="sign_354" href="#question_354" class="btn btn-default">13</a>
+										                							<a id="sign_364" href="#question_364" class="btn btn-default">14</a>
+										                							<a id="sign_374" href="#question_374" class="btn btn-default">15</a>
+										                							<a id="sign_412" href="#question_412" class="btn btn-default">16</a>
+										                							<a id="sign_431" href="#question_431" class="btn btn-default">17</a>
+										                							<a id="sign_458" href="#question_458" class="btn btn-default">18</a>
+										                							<a id="sign_488" href="#question_488" class="btn btn-default">19</a>
+										                							<a id="sign_503" href="#question_503" class="btn btn-default">20</a>
+										                							<a id="sign_509" href="#question_509" class="btn btn-default">21</a>
+										                							<a id="sign_555" href="#question_555" class="btn btn-default">22</a>
+										                							<a id="sign_572" href="#question_572" class="btn btn-default">23</a>
+										                							<a id="sign_591" href="#question_591" class="btn btn-default">24</a>
+										                							<a id="sign_616" href="#question_616" class="btn btn-default">25</a>
+										                							<a id="sign_628" href="#question_628" class="btn btn-default">26</a>
+										                							<a id="sign_734" href="#question_734" class="btn btn-default">27</a>
+										                							<a id="sign_736" href="#question_736" class="btn btn-default">28</a>
+										                							<a id="sign_744" href="#question_744" class="btn btn-default">29</a>
+										                							<a id="sign_784" href="#question_784" class="btn btn-default">30</a>
+																				</div>
+																																																						<div role="tabpanel" class="tab-pane tableindex" id="qt_3">
+										                			                							<a id="sign_807" href="#question_807" class="btn btn-default">1</a>
+										                							<a id="sign_812" href="#question_812" class="btn btn-default">2</a>
+										                							<a id="sign_818" href="#question_818" class="btn btn-default">3</a>
+										                							<a id="sign_829" href="#question_829" class="btn btn-default">4</a>
+										                							<a id="sign_838" href="#question_838" class="btn btn-default">5</a>
+										                							<a id="sign_842" href="#question_842" class="btn btn-default">6</a>
+										                							<a id="sign_855" href="#question_855" class="btn btn-default">7</a>
+										                							<a id="sign_880" href="#question_880" class="btn btn-default">8</a>
+										                							<a id="sign_883" href="#question_883" class="btn btn-default">9</a>
+										                							<a id="sign_888" href="#question_888" class="btn btn-default">10</a>
+										                							<a id="sign_927" href="#question_927" class="btn btn-default">11</a>
+										                							<a id="sign_938" href="#question_938" class="btn btn-default">12</a>
+										                							<a id="sign_950" href="#question_950" class="btn btn-default">13</a>
+										                							<a id="sign_952" href="#question_952" class="btn btn-default">14</a>
+										                							<a id="sign_959" href="#question_959" class="btn btn-default">15</a>
+										                							<a id="sign_969" href="#question_969" class="btn btn-default">16</a>
+										                							<a id="sign_992" href="#question_992" class="btn btn-default">17</a>
+										                							<a id="sign_993" href="#question_993" class="btn btn-default">18</a>
+										                							<a id="sign_1001" href="#question_1001" class="btn btn-default">19</a>
+										                							<a id="sign_1010" href="#question_1010" class="btn btn-default">20</a>
+										                							<a id="sign_1014" href="#question_1014" class="btn btn-default">21</a>
+										                							<a id="sign_1023" href="#question_1023" class="btn btn-default">22</a>
+										                							<a id="sign_1027" href="#question_1027" class="btn btn-default">23</a>
+										                							<a id="sign_1030" href="#question_1030" class="btn btn-default">24</a>
+										                							<a id="sign_1074" href="#question_1074" class="btn btn-default">25</a>
+										                							<a id="sign_1077" href="#question_1077" class="btn btn-default">26</a>
+										                							<a id="sign_1086" href="#question_1086" class="btn btn-default">27</a>
+										                							<a id="sign_1089" href="#question_1089" class="btn btn-default">28</a>
+										                							<a id="sign_1090" href="#question_1090" class="btn btn-default">29</a>
+										                							<a id="sign_1125" href="#question_1125" class="btn btn-default">30</a>
+										                							<a id="sign_1162" href="#question_1162" class="btn btn-default">31</a>
+										                							<a id="sign_1219" href="#question_1219" class="btn btn-default">32</a>
+										                							<a id="sign_1220" href="#question_1220" class="btn btn-default">33</a>
+										                							<a id="sign_1231" href="#question_1231" class="btn btn-default">34</a>
+										                							<a id="sign_1250" href="#question_1250" class="btn btn-default">35</a>
+										                							<a id="sign_1253" href="#question_1253" class="btn btn-default">36</a>
+										                							<a id="sign_1260" href="#question_1260" class="btn btn-default">37</a>
+										                							<a id="sign_1262" href="#question_1262" class="btn btn-default">38</a>
+										                							<a id="sign_1263" href="#question_1263" class="btn btn-default">39</a>
+										                							<a id="sign_1266" href="#question_1266" class="btn btn-default">40</a>
+										                							<a id="sign_1268" href="#question_1268" class="btn btn-default">41</a>
+										                							<a id="sign_1269" href="#question_1269" class="btn btn-default">42</a>
+										                							<a id="sign_1280" href="#question_1280" class="btn btn-default">43</a>
+										                							<a id="sign_1281" href="#question_1281" class="btn btn-default">44</a>
+										                							<a id="sign_1285" href="#question_1285" class="btn btn-default">45</a>
+										                							<a id="sign_1292" href="#question_1292" class="btn btn-default">46</a>
+										                							<a id="sign_1328" href="#question_1328" class="btn btn-default">47</a>
+										                							<a id="sign_1330" href="#question_1330" class="btn btn-default">48</a>
+										                							<a id="sign_1331" href="#question_1331" class="btn btn-default">49</a>
+										                							<a id="sign_1349" href="#question_1349" class="btn btn-default">50</a>
+										                							<a id="sign_1355" href="#question_1355" class="btn btn-default">51</a>
+										                							<a id="sign_1363" href="#question_1363" class="btn btn-default">52</a>
+										                							<a id="sign_1405" href="#question_1405" class="btn btn-default">53</a>
+										                							<a id="sign_1406" href="#question_1406" class="btn btn-default">54</a>
+										                							<a id="sign_1427" href="#question_1427" class="btn btn-default">55</a>
+										                							<a id="sign_1434" href="#question_1434" class="btn btn-default">56</a>
+										                							<a id="sign_1441" href="#question_1441" class="btn btn-default">57</a>
+										                							<a id="sign_1457" href="#question_1457" class="btn btn-default">58</a>
+										                							<a id="sign_1488" href="#question_1488" class="btn btn-default">59</a>
+										                							<a id="sign_1522" href="#question_1522" class="btn btn-default">60</a>
+										                							<a id="sign_1549" href="#question_1549" class="btn btn-default">61</a>
+										                							<a id="sign_1554" href="#question_1554" class="btn btn-default">62</a>
+										                							<a id="sign_1558" href="#question_1558" class="btn btn-default">63</a>
+										                							<a id="sign_1559" href="#question_1559" class="btn btn-default">64</a>
+										                							<a id="sign_1577" href="#question_1577" class="btn btn-default">65</a>
+										                							<a id="sign_1583" href="#question_1583" class="btn btn-default">66</a>
+										                							<a id="sign_1586" href="#question_1586" class="btn btn-default">67</a>
+										                							<a id="sign_1597" href="#question_1597" class="btn btn-default">68</a>
+										                							<a id="sign_1624" href="#question_1624" class="btn btn-default">69</a>
+										                							<a id="sign_1630" href="#question_1630" class="btn btn-default">70</a>
+																				</div>
+																																																																							</div>
+				</dl>
+			</div>
+			<div class="col-xs-9 split pull-right" style="padding:0px;position:relative;">
+				<div class="scoreArea">88.00</div>
+				<div class="box itembox">
+					<h2 class="text-center tt">11</h2>
+				</div>
+																								<hr />
+				<div class="box itembox">
+					<blockquote class="questype">一、单选题</blockquote>
+				</div>
+					            	            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('27');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_27">
+							<input id="time_27" type="hidden" name="time[27]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>()应当采取多种形式开展应急预案的宣传教育,普及生产安全事故预防、避险、自救和互救知识,提高从业人员安全意识和应急处置技能。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第2题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('54');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_54">
+							<input id="time_54" type="hidden" name="time[54]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《工作场所安全使用化学品规定》规定,使用单位在危险化学品工作场所应设有急救设施,并提供()的方法。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第3题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('81');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_81">
+							<input id="time_81" type="hidden" name="time[81]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《使用有毒物品作业场所劳动保护条例》规定,使用有毒物品作业的用人单位有关()应当熟悉有关职业病防治的法律、法规以及确保劳动者安全使用有毒物品作业的知识。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第4题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('86');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_86">
+							<input id="time_86" type="hidden" name="time[86]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《危险化学品安全管理条例》规定,()不得在托运的普通货物中夹带危险化学品,不得将危险化学品匿报或者谎报为普通货物托运。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第5题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('147');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_147">
+							<input id="time_147" type="hidden" name="time[147]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《中华人民共和国安全生产法》规定,生产经营单位必须为从业人员提供符合国家标准或者()标准的劳动防护用品。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第6题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('169');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_169">
+							<input id="time_169" type="hidden" name="time[169]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《中华人民共和国消防法》规定,企业对建筑消防设施()至少进行一次全面检测,确保完好有效,检测记录应当完整准确存档备查。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第7题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('176');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_176">
+							<input id="time_176" type="hidden" name="time[176]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>金属钠燃烧的火灾是()类火灾。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第8题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('191');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_191">
+							<input id="time_191" type="hidden" name="time[191]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>安全带的正确使用方法应该是()。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第9题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('211');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_211">
+							<input id="time_211" type="hidden" name="time[211]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>爆破片是一种()装置。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第10题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('280');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_280">
+							<input id="time_280" type="hidden" name="time[280]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>对剧毒化学品以及储存数量构成重大危险源的其他危险化学品,储存单位应当将其储存数量、储存地点以及管理人员的情况,报所在地()级人民政府安全生产监督管理部门和公安机关备案。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第11题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('298');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_298">
+							<input id="time_298" type="hidden" name="time[298]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>防止扩大生产性粉尘爆炸的主要技术措施不包括()。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第12题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('348');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_348">
+							<input id="time_348" type="hidden" name="time[348]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>锅炉是()转换设备。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第13题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('354');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_354">
+							<input id="time_354" type="hidden" name="time[354]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>国家发布并实施的尘肺X线诊断标准分期标准为()期。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第14题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('364');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_364">
+							<input id="time_364" type="hidden" name="time[364]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>化工污染物都是在生产过程中产生的,其主要来源是()。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第15题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('374');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_374">
+							<input id="time_374" type="hidden" name="time[374]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>黄磷在储存时应始终浸没在()中。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第16题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('412');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_412">
+							<input id="time_412" type="hidden" name="time[412]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>劳动者对用人单位提供的工作场所职业病危害因素检测结果等资料有异议,或者无用人单位提供资料的,诊断、鉴定机构应当提请()。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第17题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('431');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_431">
+							<input id="time_431" type="hidden" name="time[431]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>某火力发电厂有6台额定压力13.72MPa、额定蒸发量670t/h的电站锅炉。为保证锅炉启动和稳定燃烧,建有2个500&#13221的轻柴油储罐。为发电机冷却,建有制氢站。制氢站装有1套制氢设备和4个氢罐,氢罐的工作压力3.2MPa、体积13.9&#13221。锅炉燃用煤粉由磨煤机加工后,经输粉管道直接进入炉膛。因生产需要,该厂决定对磨煤输粉系统进行改造。改造工程包括:拆除部分距离地面6m高的破损输粉管道,更换新管道。在施工中,部分拆除和安装工作在脚手架上进行,使用额定起重量为5t的电动葫芦。拆除旧管道时,使用乙炔进行气割。新管道焊接前,使用角磨机进行抛光。拆除的旧管道和其他旧设备使用叉车运走。施工现场周围有正在使用的动力电缆和高温管道,还有部分未清除的煤粉。根据上述情况,该厂特种设备不包括()。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第18题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('458');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_458">
+							<input id="time_458" type="hidden" name="time[458]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>企业应急救援指挥部由()任总指挥;有关副职领导任副总指挥,负责一旦发生事故时应急救援的组织和指挥。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第19题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('488');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_488">
+							<input id="time_488" type="hidden" name="time[488]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>三级安全教育是指()。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第20题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('503');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_503">
+							<input id="time_503" type="hidden" name="time[503]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位因兼并、重组、转制等导致隶属关系、经营方式、法定代表人发生变化的应急预案应当().					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第21题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('509');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_509">
+							<input id="time_509" type="hidden" name="time[509]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位应对重大危险源的温度、压力、流量、浓度等采取()措施。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第22题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('555');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_555">
+							<input id="time_555" type="hidden" name="time[555]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>危险化学品事故应急救援根据事故()及其危险程度,可采取单位自救和社会救援两种形式。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第23题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('572');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_572">
+							<input id="time_572" type="hidden" name="time[572]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>我国法定职业病有()大类。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第24题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('591');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_591">
+							<input id="time_591" type="hidden" name="time[591]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>下列关于特殊化学品火灾扑救说法不正确的是()。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第25题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('616');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_616">
+							<input id="time_616" type="hidden" name="time[616]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>新建、扩建、改建建设工程,应当达到抗震设防要求。重大建设工程和可能发生严重次生灾害的建设工程,应当按照国务院有关规定进行地震安全性评价,并按照()进行抗震设防。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第26题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('628');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_628">
+							<input id="time_628" type="hidden" name="time[628]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>演练计划应包括演练目的、类型(形式)、时间、地点、()、参加单位和经费预算等。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第27题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('734');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_734">
+							<input id="time_734" type="hidden" name="time[734]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在应急救援过程中,安全管理部门协助总指挥做好事故报警、情况通报及()等工作。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第28题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('736');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_736">
+							<input id="time_736" type="hidden" name="time[736]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在应急救援过程中,对积聚和存放在事故现场的危险化学品,应及时转移至()。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第29题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('744');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_744">
+							<input id="time_744" type="hidden" name="time[744]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在应急救援过程中,社会援助队伍到达企业时,指挥部要派人员引导并告知()。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第30题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('784');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_784">
+							<input id="time_784" type="hidden" name="time[784]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>中央管理的总公司(总厂、集团公司、上市公司)所属单位外的其他生产经营单位中涉及实行()的,其综合应急预案和专项应急预案,按照隶属关系报所在地县级以上地方人民政府安全生产监督管理部门和有关主管部门备案。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+																																												<hr />
+				<div class="box itembox">
+					<blockquote class="questype">二、判断题</blockquote>
+				</div>
+					            	            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('807');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_807">
+							<input id="time_807" type="hidden" name="time[807]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《使用有毒物品作业场所劳动保护条例》规定,用人单位应当尽可能使用无毒物品;需要使用有毒物品的,应当优先选择使用低毒物品。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第2题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('812');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_812">
+							<input id="time_812" type="hidden" name="time[812]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《危险化学品安全管理条例》规定,负有危险化学品安全监督管理职责的部门,对不符合法律、行政法规、规章规定或者国家标准、行业标准要求的设施、设备、装置、器材、运输工具,责令立即停止使用。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第3题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('818');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_818">
+							<input id="time_818" type="hidden" name="time[818]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《危险化学品安全管理条例》规定除运输工具加油站、加气站外,危险化学品的生产装置和储存数量构成重大危险源的储存设施,与供水水源、水厂及水源保护区等场所、区域距离必须符合国家标准或者国家有关规定。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第4题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('829');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_829">
+							<input id="time_829" type="hidden" name="time[829]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《中华人民共和国安全生产法》规定,生产经营单位对负有安全生产监督管理职责的部门的监督检查人员依法履行监督检查职责,应当予以配合,不得拒绝、阻挠。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第5题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('838');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_838">
+							<input id="time_838" type="hidden" name="time[838]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《中华人民共和国消防法》规定,生产、储存、装卸易燃易爆危险品的工厂、仓库和专用车站、码头的设置,应当符合消防技术标准。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第6题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('842');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_842">
+							<input id="time_842" type="hidden" name="time[842]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>2006年4月19日,某树脂制品有限公司生产过程中大量使用有机溶剂甲苯,人工操作,没有通风设施。员工方某发生疑似急性甲苯中毒,4月20日经诊断为“轻度甲苯中毒”。经职业卫生监督人员现场检查发现,该公司未向卫生行政部门申报存在职业危害因素,未组织操作人员上岗前、在岗期间、离岗时的职业健康检查,未设立职业健康监护档案;无工作场所职业病危害因素监测及评价资料;未建立职业病防治管理制度和职业病危害事故应急救援预案;职业病危害因素岗位操作人员未佩戴有效的个人防护用品;未设立警示标志和中文警示说明。根据上述事实,请判断,订立劳动合同时,企业可以将工作过程中可能产生的部分职业病危害及其后果、职业病防护措施和待遇应如实告知劳动者。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第7题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('855');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_855">
+							<input id="time_855" type="hidden" name="time[855]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>安全阀卸压时应将其危险气体导至安全的地点。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第8题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('880');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_880">
+							<input id="time_880" type="hidden" name="time[880]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>爆破片不宜用于介质具有剧毒性的设备或压力急剧升高的设备。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第9题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('883');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_883">
+							<input id="time_883" type="hidden" name="time[883]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>爆破片的泄放管线应尽可能垂直安装。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第10题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('888');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_888">
+							<input id="time_888" type="hidden" name="time[888]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>爆炸极限的范围越宽,爆炸下限越小,则此物质越危险。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第11题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('927');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_927">
+							<input id="time_927" type="hidden" name="time[927]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>从保障安全和方便使用出发,消防用电设备配电线路应设置单独的供电回路。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第12题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('938');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_938">
+							<input id="time_938" type="hidden" name="time[938]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>存放过放射性物品的地方,单位如果存放其他物品,单位应当指派专人负责进行彻底清洗。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第13题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('950');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_950">
+							<input id="time_950" type="hidden" name="time[950]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>登记企业不得转让、冒用或者使用伪造的危险化学品登记证。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第14题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('952');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_952">
+							<input id="time_952" type="hidden" name="time[952]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>电机冒烟起火时要紧急停车。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第15题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('959');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_959">
+							<input id="time_959" type="hidden" name="time[959]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>毒物浓度超过国家职业卫生接触限值时,应及时整改复测。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第16题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('969');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_969">
+							<input id="time_969" type="hidden" name="time[969]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>对用人单位违反《用人单位职业健康监护监督管理办法》的行为,任何单位和个人均有权向安全生产监督管理部门举报或者报告。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第17题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('992');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_992">
+							<input id="time_992" type="hidden" name="time[992]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>发生有毒气体泄漏时,应顺风撤离。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第18题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('993');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_993">
+							<input id="time_993" type="hidden" name="time[993]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>发证机关对取得资质的职业卫生技术服务机构应当及时公告,接受社会监督。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第19题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1001');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1001">
+							<input id="time_1001" type="hidden" name="time[1001]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>粉尘引起的职业病危害有全身中毒性、局部刺激性、变态反应性、致癌性、尘肺等疾病。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第20题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1010');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1010">
+							<input id="time_1010" type="hidden" name="time[1010]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>高压容器的使用压力较高,密封是个关键,所以密封结构也是高压容器中的一个主要结构。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第21题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1014');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1014">
+							<input id="time_1014" type="hidden" name="time[1014]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>各级安全生产监督管理部门应当将应急预案的培训纳入安全生产培训工作计划,并组织实施本行政区域内重点生产经营单位的应急预案培训工作。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第22题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1023');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1023">
+							<input id="time_1023" type="hidden" name="time[1023]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>工会无权对建设项目的安全设施与主体工程“三同时”进行监督,提出意见。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第23题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1027');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1027">
+							<input id="time_1027" type="hidden" name="time[1027]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>工业生产中,用惰性介质保护是防止形成爆炸性混合物的重要措施。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第24题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1030');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1030">
+							<input id="time_1030" type="hidden" name="time[1030]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>工作时间前后在工作场所内,从事与工作有关的预备性或者收尾性工作受到事故伤害的,不应当认定为工伤。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第25题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1074');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1074">
+							<input id="time_1074" type="hidden" name="time[1074]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>化学事故发生后,对危险区的人员应及时组织疏散至复杂地带,在污染严重、被困人员多、情况比较复杂时,也要由疏散组单独组织疏散。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第26题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1077');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1077">
+							<input id="time_1077" type="hidden" name="time[1077]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>化学事故应急救援过程中,对进入警戒区的人员可以自由出入,对进入重危区的人员要进行控制。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第27题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1086');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1086">
+							<input id="time_1086" type="hidden" name="time[1086]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>混合物中可燃物浓度低于下限时因含有过量的空气,空气的冷却作用会阻止火焰的蔓延。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第28题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1089');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1089">
+							<input id="time_1089" type="hidden" name="time[1089]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>火灾扑灭后,发生火灾的单位和相关人员应当按照公安机关消防机构的要求保护现场,接受事故调查,如实提供与火灾有关的情况。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第29题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1090');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1090">
+							<input id="time_1090" type="hidden" name="time[1090]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>火灾通常指违背人们的意志,在时间和空间上失去控制的燃烧所造成的灾害。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第30题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1125');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1125">
+							<input id="time_1125" type="hidden" name="time[1125]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>剧毒物品的仓库应使用密闭措施。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第31题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1162');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1162">
+							<input id="time_1162" type="hidden" name="time[1162]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>某厂生产一种有机产品,须在高压釜中进行反应,随着温度升高(外加热),釜内物料分解,气体要及时放空,保持一定压力,生产一直正常稳定。有一次,操作工没开启放空阀,班长未检查,投料升温后,釜内压力剧增,釜上的防爆设施失灵,一股有毒气体从高压釜法兰处冲出。当场有几人中毒晕倒,强大气流又将装有溶剂的储槽玻璃计量管冲坏,大量溶剂流出,引起火灾。临近几个储罐发生连环爆炸,一些溶剂从排水沟流入江河,造成严重水质污染。根据上述描述,请判断,该厂存在玻璃计量管没用金属套保护等缺陷。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第32题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1219');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1219">
+							<input id="time_1219" type="hidden" name="time[1219]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>任何单位和个人不得编造、传播有关突发事件事态发展或者应急处置工作的虚假信息。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第33题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1220');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1220">
+							<input id="time_1220" type="hidden" name="time[1220]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>任何单位和个人不得将产生职业病危害的作业转移给不具备职业病防护条件的单位和个人。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第34题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1231');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1231">
+							<input id="time_1231" type="hidden" name="time[1231]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>熔断器的额定电压,必须大于等于配电线路电压。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第35题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1250');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1250">
+							<input id="time_1250" type="hidden" name="time[1250]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位,将生产经营项目、场所、设备发包出租的,承包、承租单位的事故隐患排查治理自行负责。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第36题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1253');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1253">
+							<input id="time_1253" type="hidden" name="time[1253]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位不得将生产经营项目、场所、设备发包或者出租给不具备安全生产条件或者相应资质的单位或者个人。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第37题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1260');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1260">
+							<input id="time_1260" type="hidden" name="time[1260]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位对新录用的从业人员,要制定详实的教育培训计划,培训经费由从业人员支付。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第38题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1262');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1262">
+							<input id="time_1262" type="hidden" name="time[1262]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位对职业安全健康管理方案应每年进行一次评审,以确保管理方案的实施,能够实现职业安全健康目标。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第39题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1263');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1263">
+							<input id="time_1263" type="hidden" name="time[1263]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位发生事故后,应当及时启动应急预案,组织有关力量进行救援,不必将事故信息及应急预案启动情况报告安全生产监督管理部门和其他负有安全生产监督管理职责的部门。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第40题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1266');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1266">
+							<input id="time_1266" type="hidden" name="time[1266]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位可以根据本单位实际情况为从业人员提供符合国家标准或者行业标准的劳动防护用品,并监督、教育从业人员按照使用规则佩戴、使用。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第41题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1268');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1268">
+							<input id="time_1268" type="hidden" name="time[1268]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位生产工艺和技术发生变化的应急预案不需要修订。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第42题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1269');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1269">
+							<input id="time_1269" type="hidden" name="time[1269]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产经营单位为了企业利益,可以与从业人员订立协议,免除或者减轻其对从业人员因生产安全事故伤亡依法应承担的责任。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第43题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1280');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1280">
+							<input id="time_1280" type="hidden" name="time[1280]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产企业的从业人员需经安全生产教育和培训合格后方能上岗作业。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第44题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1281');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1281">
+							<input id="time_1281" type="hidden" name="time[1281]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>生产使用的机械设备必须建立健全安装、使用、检查、维修、保养制度,不准超温、超压、超负荷运行,在一般情况下可以超期服役。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第45题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1285');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1285">
+							<input id="time_1285" type="hidden" name="time[1285]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>使用供风式面具时,必须安排专人监护供风设备。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第46题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1292');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1292">
+							<input id="time_1292" type="hidden" name="time[1292]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>事故发生后,危险区域人员首先要做好自救互救,在医护人员到达时,要听从医护人员的指挥,采取切实可行的救助办法,以达到减少人员伤亡的目的。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第47题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1328');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1328">
+							<input id="time_1328" type="hidden" name="time[1328]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>同一工作场所,不同职业病危害因素,须分别设监测点,同一岗位,可合并设点。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第48题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1330');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1330">
+							<input id="time_1330" type="hidden" name="time[1330]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>突发环境事件报告中初报是查清有关基本情况后随时上报。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第49题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1331');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1331">
+							<input id="time_1331" type="hidden" name="time[1331]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>突发事件发生地的公民应当服从人民政府、居民委员会、村民委员会或者所属单位的指挥和安排,配合人民政府采取的应急处置措施,积极参加应急救援工作,协助维护社会秩序。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第50题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1349');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1349">
+							<input id="time_1349" type="hidden" name="time[1349]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>危险化学品可以露天堆放。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第51题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1355');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1355">
+							<input id="time_1355" type="hidden" name="time[1355]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>危险化学品生产企业必须向用户提供化学事故应急咨询服务,为化学事故应急救援提供技术指导和必要的协助。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第52题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1363');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1363">
+							<input id="time_1363" type="hidden" name="time[1363]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>危险化学品性质或消防方法相互抵触,以及配装号或类项不同的危险化学品不能装在同一车、船内运输。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第53题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1405');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1405">
+							<input id="time_1405" type="hidden" name="time[1405]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>压力容器爆炸和锅炉爆炸属于物理爆炸。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第54题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1406');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1406">
+							<input id="time_1406" type="hidden" name="time[1406]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>压力容器的特种设备作业人员,应当按照有关规定经本单位安全监督管理部门考核合格后,方可从事相应的作业或者管理工作。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第55题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1427');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1427">
+							<input id="time_1427" type="hidden" name="time[1427]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>液氯生产所用的设备发生泄漏是氯碱企业常见的隐患之一。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第56题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1434');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1434">
+							<input id="time_1434" type="hidden" name="time[1434]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>一级重大危险源所配备的采集和监测系统应具备信息远传、连续记录、异常状态报警、事故预警、信息储存和紧急停车等功能。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第57题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1441');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1441">
+							<input id="time_1441" type="hidden" name="time[1441]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>易燃、易爆品必须装在铁帮、铁底车、船内运输。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第58题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1457');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1457">
+							<input id="time_1457" type="hidden" name="time[1457]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>应急救援过程中,应急救援人员要在警戒区边界实施不间断的检测,以确保警戒区的有效性。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第59题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1488');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1488">
+							<input id="time_1488" type="hidden" name="time[1488]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>用人单位安排未经职业健康检查的劳动者从事接触职业病危害的作业的,并处5万元以上30万元以下的罚款;情节严重的,责令停止产生职业病危害的作业,或者提请有关人民政府按照国务院规定的权限责令关闭。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第60题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1522');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1522">
+							<input id="time_1522" type="hidden" name="time[1522]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>有关人民政府及其部门为应对突发事件,可以征用单位和个人的财产。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第61题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1549');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1549">
+							<input id="time_1549" type="hidden" name="time[1549]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在化学反应中,原料中的有害危险杂质的存在会导致副反应发生和过反应的发生。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第62题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1554');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1554">
+							<input id="time_1554" type="hidden" name="time[1554]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在进行物料粉碎时,最易产生的点火源是物料中掺杂有坚硬的铁石杂物,在撞击或研磨过程中能产生火花。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第63题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1558');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1558">
+							<input id="time_1558" type="hidden" name="time[1558]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在使用高压验电器时操作者应戴绝缘手套。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第64题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1559');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1559">
+							<input id="time_1559" type="hidden" name="time[1559]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在特别潮湿场所或导电良好、地点狭窄的场所,使用安全行灯的电压不得大于36V。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第65题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1577');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1577">
+							<input id="time_1577" type="hidden" name="time[1577]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>在综合应急演练前,演练组织单位或策划人员可按照演练方案或脚本组织桌面演练或合成预演,熟悉演练实施过程的各个环节。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第66题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1583');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1583">
+							<input id="time_1583" type="hidden" name="time[1583]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>政府有关部门应制定综合性的土地使用政策。确保重大危险源与居民区、其它工作场所(机构)与水库等公共设施以及其他危险源安全隔离。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第67题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1586');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1586">
+							<input id="time_1586" type="hidden" name="time[1586]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>直流电流与交流电流相比,容易摆脱,其室颤电流也比较小,因而,直流电击事故很少。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第68题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1597');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1597">
+							<input id="time_1597" type="hidden" name="time[1597]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>职业病防护设施,包括降低职业病危害因素的强度或浓度的设备和设施,也包括有关建筑物和构筑物。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第69题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1624');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1624">
+							<input id="time_1624" type="hidden" name="time[1624]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>重大危险源,是指长期地或者临时地生产、搬运、使用或者储运危险化学品,且危险物品的数量等于或者超过临界量的单元(包括场所和设施)。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第70题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('1630');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_1630">
+							<input id="time_1630" type="hidden" name="time[1630]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>专项应急预案的事故类型和危害程度分析要在危险源评估的基础上,对其可能发生的事故类型和可能发生的季节及其严重程度进行确定。					</div>
+															<div class="choice">
+	                		                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：1分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>危化品知识&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+																																																							</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid box" style="background-color:#337AB7;margin-bottom:0px;" id="footer">
+	<div class="row-fluid">
+		<div class="main itembox">
+			<div class="col-xs-12">
+				<ul class="list-unstyled">
+				<!--
+					<li class="text-center"><a href="">PHPEMS在线模拟考试系统 著作权登记号：2013 SR 113189</a></li>
+					<li class="text-center"><a href="">Copyright © phpems.net  2015-2016</a></li>
+				-->
+				<li class="text-center"><a href="">业务支持：人事 6043</a></li>
+				<li class="text-center"><a href="">技术支持：IT 6186</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div></body>
+</html>

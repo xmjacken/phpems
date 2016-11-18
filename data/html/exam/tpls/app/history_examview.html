@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DAC在线考试管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery.json.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+	<script src="app/exam/styles/js/plugin.js"></script>
+</head><body data-spy="scroll" data-target="#myScrollspy">
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-3">
+				<h1 style="font-size:42px;color:#337AB7;"><img src="app/core/styles/img/daclogo.png" style="height:60px;margin-top:-10px;"/>&nbsp;<b></b></h1>
+			</div>
+			<div class="col-xs-1">
+			</div>
+			<div class="col-xs-6" style="padding-top:22px;">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="text" style="width:380px;" class="form-control" id="keyword" placeholder="搜索课程/资料">
+					</div>
+					<button type="button" class="btn btn-info" onclick="javascript:window.location='index.php?content-app-search&keyword='+$('#keyword').val();">搜资料</button>
+					<button type="button" class="btn btn-primary" onclick="javascript:window.location='index.php?course-app-search&keyword='+$('#keyword').val();">搜课程</button>
+				</div>
+			</div>
+			<div class="col-xs-2" style="padding-top:22px;">
+				<ul class="list-unstyled list-inline">
+										<li>
+						<div class="btn-group">
+							<button type="button" class="btn btn-info"><em class="glyphicon glyphicon-user"></em> peadmin</button>
+							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> 用户中心</a></li>
+								<li><a href="index.php?exam-teach"><em class="glyphicon glyphicon-book"></em> 教师管理</a></li>								<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> 后台管理</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> 退出</a></li>
+							</ul>
+						</div>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#337AB7;">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-12">
+				<ul class="list-unstyled list-inline">
+					<li class="menu col-xs-1"><a href="index.php" class="icon">首页</a></li>
+					<li class="menu col-xs-1"><a href="index.php?course">课程</a></li>
+					<li class="menu col-xs-1 active"><a href="index.php?exam">考试</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="box itembox">
+				<div class="col-xs-12">
+					<ol class="breadcrumb">
+					  <li><a href="index.php">首页</a></li>
+					  <li><a href="index.php?exam-app">考试</a></li>
+					  <li><a href="index.php?exam-app-basics">危化品安全</a></li>
+					  <li><a href="index.php?exam-app-history">考试记录</a></li>
+					  <li class="active">危化品安全试卷</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" id="questioncontent">
+	<div class="row-fluid">
+		<div class="main box">
+			<div class="col-xs-3" id="questionbar">
+				<dl class="clear" style="width:270px;" data-spy="affix" data-offset-top="235">
+					<dt class="float_l"><h4>&nbsp;</h4></dt>
+					<ul class="nav nav-tabs" role="tablist">
+																																										<li role="presentation" class="active"><a href="#qt_1" aria-controls="home" role="tab" data-toggle="tab">一</a></li>
+																																																																														<li role="presentation"><a href="#qt_3" aria-controls="home" role="tab" data-toggle="tab">二</a></li>
+																																																																																																																	</ul>
+					<div class="tab-content" style="margin-top:5px;" id="questionindex">
+																																										<div role="tabpanel" class="tab-pane tableindex active" id="qt_1">
+										                			                							<a id="sign_12" href="#question_12" class="btn btn-default">1</a>
+										                							<a id="sign_28" href="#question_28" class="btn btn-default">2</a>
+										                							<a id="sign_31" href="#question_31" class="btn btn-default">3</a>
+										                							<a id="sign_40" href="#question_40" class="btn btn-default">4</a>
+										                							<a id="sign_42" href="#question_42" class="btn btn-default">5</a>
+										                							<a id="sign_53" href="#question_53" class="btn btn-default">6</a>
+										                							<a id="sign_56" href="#question_56" class="btn btn-default">7</a>
+										                							<a id="sign_73" href="#question_73" class="btn btn-default">8</a>
+										                							<a id="sign_85" href="#question_85" class="btn btn-default">9</a>
+										                							<a id="sign_92" href="#question_92" class="btn btn-default">10</a>
+																				</div>
+																																																																														<div role="tabpanel" class="tab-pane tableindex" id="qt_3">
+										                			                							<a id="sign_108" href="#question_108" class="btn btn-default">1</a>
+										                							<a id="sign_109" href="#question_109" class="btn btn-default">2</a>
+										                							<a id="sign_114" href="#question_114" class="btn btn-default">3</a>
+										                							<a id="sign_122" href="#question_122" class="btn btn-default">4</a>
+										                							<a id="sign_144" href="#question_144" class="btn btn-default">5</a>
+										                							<a id="sign_172" href="#question_172" class="btn btn-default">6</a>
+										                							<a id="sign_190" href="#question_190" class="btn btn-default">7</a>
+										                							<a id="sign_193" href="#question_193" class="btn btn-default">8</a>
+										                							<a id="sign_196" href="#question_196" class="btn btn-default">9</a>
+										                							<a id="sign_200" href="#question_200" class="btn btn-default">10</a>
+																				</div>
+																																																																																																																	</div>
+				</dl>
+			</div>
+			<div class="col-xs-9 split pull-right" style="padding:0px;position:relative;">
+				<div class="scoreArea">20.00</div>
+				<div class="box itembox">
+					<h2 class="text-center tt">危化品安全试卷</h2>
+				</div>
+																												<hr />
+				<div class="box itembox">
+					<blockquote class="questype">一、单选题</blockquote>
+				</div>
+					            	            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('12');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_12">
+							<input id="time_12" type="hidden" name="time[12]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>()就是生产经营单位的生产管理者、经营者,为实现安全生产目标,按照一定的安全管理原则,科学地组织、指挥和协调全体员工进行安全生产的活动。					</div>
+															<div class="choice">
+	                	A、安全生产 B、安全管理 C、安全生产管理	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第2题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('28');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_28">
+							<input id="time_28" type="hidden" name="time[28]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>()应当为劳动者创造符合国家职业卫生标准和卫生要求的工作环境和条件,并采取措施保障劳动者获得职业卫生保护。					</div>
+															<div class="choice">
+	                	A、各级工会组织 B、用人单位
+C、企业、科研单位、政府机关	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="right"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：5分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第3题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('31');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_31">
+							<input id="time_31" type="hidden" name="time[31]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>()属于化学性危害因素。					</div>
+															<div class="choice">
+	                	A、工业毒物  B、振动  C、高温	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第4题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('40');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_40">
+							<input id="time_40" type="hidden" name="time[40]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《安全生产法》规定,生产经营单位用于生产、储存危险物品的建设项目竣工投入生产或者使用前,()未经验收合格的,责令停止建设或者停产停业整顿,限期改正;逾期未改正的,处五十万元以上一百万元以下的罚款;构成犯罪的,依照刑法有关规定追究刑事责任。					</div>
+															<div class="choice">
+	                	A、生产设备  B、储存设施  C、安全设施	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第5题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('42');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_42">
+							<input id="time_42" type="hidden" name="time[42]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《安全生产法》规定,危险物品的生产、经营、储存单位以及矿山、金属冶炼、建筑施工、道路运输单位的主要负责人和安全生产管理人员未按照规定经()合格的,责令限期改正,可以处五万元以下的罚款;逾期未改正的,责令停产停业整顿,并处五万元以上十万元以下的罚款,对其直接负责的主管人员和其他直接责任人处一万元以上的罚款。					</div>
+															<div class="choice">
+	                	A、培训  B、考核  C、审查	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="right"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：5分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第6题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('53');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_53">
+							<input id="time_53" type="hidden" name="time[53]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《工作场所安全使用化学品规定》规定,使用单位对工作场所使用的危险化学品产生的危害应定期进行检测和评估,对检测和评估结果应建立档案。作业人员接触的危险化学品()不得高于国家规定的标准暂没有规定的,使用单位应在保证安全作业的情况下使用。					</div>
+															<div class="choice">
+	                	A、毒性  B、有害性  C、浓度	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第7题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('56');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_56">
+							<input id="time_56" type="hidden" name="time[56]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《化学品安全标签编写规定》中规定标签必须包括()方面内容。					</div>
+															<div class="choice">
+	                	A、 7     B、 8     C、 9	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="right"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：5分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第8题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('73');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_73">
+							<input id="time_73" type="hidden" name="time[73]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《使用有毒物品作业场所劳动保护条例》规定,存在高毒作业的建设项目的职业中毒危害防护设施设计,应当经()部门进行卫生审查;经审查,符合国家职业卫生标准和卫生要求的,方可施工。					</div>
+															<div class="choice">
+	                	A、卫生行政 B、安监 C、公安	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第9题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('85');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_85">
+							<input id="time_85" type="hidden" name="time[85]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《使用有毒物品作业场所劳动保护条例》规定,用人单位应当依照本条例和其他有关法律、行政法规的规定,采取有效的防护措施,预防()的发生,依法参加工伤保险,保障劳动者的生命安全和身体健康					</div>
+															<div class="choice">
+	                	A、事故  B、职业中毒事故  C、火灾	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="right"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：5分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第10题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('92');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_92">
+							<input id="time_92" type="hidden" name="time[92]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>《危险化学品安全管理条例》规定,国家实行危险化学品()制度,为危险化学品安全管理以及危险化学品事故预防和应急救援提供技术、信息支持。					</div>
+															<div class="choice">
+	                	A、登记  B、注册  C、备案	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td>C</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+																																																												<hr />
+				<div class="box itembox">
+					<blockquote class="questype">二、判断题</blockquote>
+				</div>
+					            	            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第1题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('108');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_108">
+							<input id="time_108" type="hidden" name="time[108]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>产生职业病危害的用人单位工作场所还应当有配套的更衣间、洗浴间、孕妇休息间等卫生设施。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第2题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('109');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_109">
+							<input id="time_109" type="hidden" name="time[109]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>常压的容器是不能贮存压缩气体和加压液体的。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第3题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('114');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_114">
+							<input id="time_114" type="hidden" name="time[114]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>抽加盲板允许带压进行。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第4题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('122');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_122">
+							<input id="time_122" type="hidden" name="time[122]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>储存危险化学品的建筑必须安装通风设备,并注意设备的防护措施。通排风系统可不考虑导除静电的接地装置。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第5题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('144');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_144">
+							<input id="time_144" type="hidden" name="time[144]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>单位要根据需要,没有必要引进、采用先进适用的应急救援技术装备。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第6题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('172');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_172">
+							<input id="time_172" type="hidden" name="time[172]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>对于加工、运输、储存可燃性气体的设备,在停车作业前,可不用进行置换操作。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第7题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('190');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_190">
+							<input id="time_190" type="hidden" name="time[190]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>发生危险化学品火灾时,灭火人员应个人单独灭火。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第8题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('193');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_193">
+							<input id="time_193" type="hidden" name="time[193]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>发证机关对取得资质的职业卫生技术服务机构应当及时公告,接受社会监督。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>A</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第9题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('196');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_196">
+							<input id="time_196" type="hidden" name="time[196]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>凡与大地有可靠接触的金属导体,均可作为自然接地体。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+					            				<div class="box itembox paperexamcontent">
+					<h4 class="title">
+						第10题
+						<span class="pull-right">
+							<a class="btn btn-primary qicon" onclick="javascript:favorquestion('200');"><i class="glyphicon glyphicon-heart-empty"></i></a>
+							<a name="question_200">
+							<input id="time_200" type="hidden" name="time[200]"/>
+						</span>
+					</h4>
+					<div class="choice">
+						</a>分期建设、分期投入生产或者使用的建设项目,其配套的职业病防护设施应当在建设项目全部完成后进行验收。					</div>
+															<div class="choice">
+	                	A、正确  B、错误	                </div>
+	                	                					<div class="decidediv" style="position:relative;">
+	                	<div class="wrong"></div>	                	<table class="table table-hover table-bordered">
+            				<tr class="info">
+	                			<th colspan="2" style="border-top:0px;">本题得分：0分</th>
+	                		</tr>
+	                		<tr>
+	                    		<td width="15%">正确答案：</td>
+	                    		<td>B</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>您的答案：</td>
+	                        	<td></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>所在章：</td>
+	                    		<td>第一章&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>知识点：</td>
+	                    		<td>基础知识点&nbsp;&nbsp;&nbsp;</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td>答案解析：</td>
+	                    		<td>暂时没有</td>
+	                    	</tr>
+	                	</table>
+	                </div>
+				</div>
+																																																																																			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid box" style="background-color:#337AB7;margin-bottom:0px;" id="footer">
+	<div class="row-fluid">
+		<div class="main itembox">
+			<div class="col-xs-12">
+				<ul class="list-unstyled">
+				<!--
+					<li class="text-center"><a href="">PHPEMS在线模拟考试系统 著作权登记号：2013 SR 113189</a></li>
+					<li class="text-center"><a href="">Copyright © phpems.net  2015-2016</a></li>
+				-->
+				<li class="text-center"><a href="">业务支持：人事 6043</a></li>
+				<li class="text-center"><a href="">技术支持：IT 6186</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div></body>
+</html>
