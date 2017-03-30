@@ -105,6 +105,8 @@ class action extends app
 			$userids = $this->ev->get('userids');
 			$usernames = $this->ev->get('usernames');
 			$usergroupids = $this->ev->get('usergroupids');
+			$userstartid = $this->ev->get('startid');
+			$userendid = $this->ev->get('endid');
 			$basics = $this->ev->get('basics');
 			$days = $this->ev->get('days');
 			if($userids && $basics && $days)
@@ -156,6 +158,29 @@ class action extends app
 					'statusCode' => 200,
 					"message" => "操作成功"
 				);
+			}
+			elseif($userstartid && $userendid && $basics && $days)
+			{
+				if($userstartid>$userendid){
+					$message = array(
+					'statusCode' => 300,
+					"message" => "参数错误"
+					);
+				}else{
+					$userids = range($userstartid,$userendid);
+					$basics = explode(",",$basics);
+					foreach($userids as $userid)
+					{
+						foreach($basics as $basicid)
+						{
+							$this->basic->openBasic(array('obuserid'=>$userid,'obbasicid'=>$basicid,'obendtime' => TIME + $days*24*3600));
+						}
+					}
+					$message = array(
+						'statusCode' => 200,
+						"message" => "操作成功"
+					);
+				}
 			}
 			else
 			{
