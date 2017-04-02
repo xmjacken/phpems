@@ -170,7 +170,24 @@ class action extends app
 			$this->tpl->display('users_knowsstats');
 		}
 	}
-
+	/*
+	*教师端删除考试记录
+	*/
+	private function examteacherdel()
+	{
+		$ehid = $this->ev->get('ehid');
+		$basicid = $this->ev->get('basicid');
+		$page = $this->ev->get('page');
+		$userid = $this->ev->get('userid');
+		$this->favor->delExamHistory($ehid,$userid);
+		$message = array(
+			'statusCode' => 200,
+			"message" => "操作成功",
+		    "callbackType" => 'forward',
+		    "forwardUrl" => "reload"
+		);
+		$this->G->R($message);
+	}
 	private function outscore()
 	{
 		$search = $this->ev->get('search');

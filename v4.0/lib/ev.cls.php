@@ -74,8 +74,15 @@ class ev
     public function url($par)
     {
     	$par = intval($par);
-    	if(isset($this->url[$par]))return $this->url[$par];
-    	else return false;
+    	if(isset($this->url[$par])){
+    		$url=$this->url[$par];
+			$url=str_replace('%3D','',$url);
+			//print_r($url);
+    		return $url;
+    	}
+    	else{
+    	 return false;
+    	}
     }
 
 	//设置COOKIE
