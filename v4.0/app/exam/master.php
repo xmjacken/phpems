@@ -51,6 +51,7 @@ class app
 		$apps = $this->apps->getAppList();
 		$this->tpl->assign('localapps',$localapps);
 		$this->tpl->assign('apps',$apps);
+		$this->tpl->assign('page',$this->ev->get[page]);
 	}
 }
 
