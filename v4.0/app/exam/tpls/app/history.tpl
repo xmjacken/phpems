@@ -29,6 +29,35 @@
 						<a href="index.php?exam-app-history&ehtype=2">正式考试</a>
 					</li>
 				</ul>
+				    <script src="https://a.alipayobjects.com/g/datavis/g2/2.2.6/g2.js"></script>
+				    <div id="c1"></div>
+				    <script>
+				      var data = [
+				{x2;tree:$exams['data'],exam,eid}
+				{x2;if:!v:exam['ehstatus'] && v:exam['ehdecide']}
+				{vid: '{x2;date:v:exam['ehstarttime'],'m-d h:i:s'}', score: 0},
+				{x2;else}
+				{vid: '{x2;date:v:exam['ehstarttime'],'m-d h:i:s'}', score: {x2;v:exam['ehscore']}},
+				{x2;endif}
+				{x2;endtree}
+				      ];
+				      var chart = new G2.Chart({
+					id: 'c1',
+					forceFit: true,
+					height: 450,
+					aminate:true
+				      });
+				      chart.source(data, {
+					vid: {
+					  alias: '时间'
+					},
+					score: {
+					  alias: '得分'
+					}
+				      });
+				      chart.line().position('vid*score').size(2);
+				      chart.render();
+				    </script>
 				<blockquote class="questype" style="margin-top:20px;">
 					{x2;if:$ehtype == 0}
 					<p><span class="text-warning">提示：</span>我的错题中的强化训练最多记录最新20条信息。</p>

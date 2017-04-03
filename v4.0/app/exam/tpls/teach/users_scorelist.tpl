@@ -98,7 +98,7 @@
 								<td>
 									{x2;if:v:exam['ehtime'] >= 60}{x2;if:v:exam['ehtime']%60}{x2;eval: echo intval(v:exam['ehtime']/60)+1}{x2;else}{x2;eval: echo intval(v:exam['ehtime']/60)}{x2;endif}分钟{x2;else}{x2;v:exam['ehtime']}秒{x2;endif}
 								</td>
-								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid={x2;v:exam['ehid']}" target="_blank">阅卷</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid={x2;v:exam['ehid']}" target="_blank">纠分</a></td>
+								<td><a class="btn btn-primary" href="index.php?exam-teach-users-readpaper&ehid={x2;v:exam['ehid']}" target="_blank">阅卷</a>&nbsp;<a msg="确认删除{x2;v:exam['ehusername']}[{x2;v:exam['ehexam']}]的考试记录？删除后无法恢复" class="btn confirm btn-primary" href="index.php?exam-teach-users-examteacherdel&ehid={x2;v:exam['ehid']}&userid={x2;v:exam['ehuserid']}">删除</a>&nbsp;<a class="btn btn-primary hide" href="index.php?exam-teach-users-changescore&ehid={x2;v:exam['ehid']}" target="_blank">纠分</a></td>
 					        </tr>
 					        {x2;endtree}
 			        	</tbody>

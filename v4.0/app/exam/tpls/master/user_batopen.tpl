@@ -33,6 +33,9 @@
 							<li>
 								<a href="#panel-888294" data-toggle="tab">用户组开通</a>
 							</li>
+							<li>
+								<a href="#panel-889994" data-toggle="tab">用户ID范围开通</a>
+							</li>
 						</ul>
 						<div class="tab-content">
 							<div id="panel-65699" class="tab-pane active">
@@ -108,6 +111,45 @@
 									  		<span class="help-block">每个ID请使用英文逗号隔开</span>
 										</div>
 									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-2">考场ID：</label>
+									  	<div class="col-sm-9">
+										  	<textarea class="form-control" rows="4" needle="needle" msg="您最少需要填写一个考场" name="basics"></textarea>
+									  		<span class="help-block">每个考场ID请使用英文逗号隔开</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-2">时长：</label>
+									  	<div class="col-sm-9 form-inline">
+										  	<input size="5" name="days" class="form-control" type="text" needle="needle" msg="您最少需要填写一天" value="1"/> 天
+										</div>
+									</div>
+									<div class="form-group">
+									  	<label class="control-label col-sm-2"></label>
+									  	<div class="col-sm-9">
+										  	<button class="btn btn-primary" type="submit">提交</button>
+										  	<input type="hidden" name="page" value="{x2;$page}"/>
+										  	<input type="hidden" name="batopen" value="1"/>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div id="panel-889994" class="tab-pane">
+								<form action="index.php?exam-master-users-batopen" method="post" class="form-horizontal">
+									<div class="form-group">
+										<label class="control-label col-sm-2">用户起始ID</label>
+									  	<div class="col-sm-9 form-inline">
+										  	<input size="8" name="startid" class="form-control" type="text" needle="needle" msg="必须填写" value=""/>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-2">用户结束ID</label>
+									  	<div class="col-sm-9 form-inline">
+										  	<input size="8" name="endid" class="form-control" type="text" needle="needle" msg="必须填写" value=""/>
+										  	<span class="help-block">如：修改1-1000号的用户，初始ID填1，结束ID填1000。</span>
+										</div>
+									</div>
+
 									<div class="form-group">
 										<label class="control-label col-sm-2">考场ID：</label>
 									  	<div class="col-sm-9">
